@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wedding celebration">
+  <title>Wedding Celebration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Page Container - All pages wrapped here -->
+  <div class="page-container">
+
+    <!-- HOME PAGE -->
+    <div class="page active" data-page="home">
+      <!-- Hero Section -->
+      <section class="hero" id="hero">
+        <div class="hero-floral">
+          <img src="images/floral-header.png" alt="Floral decoration" id="heroFloral"
+            onerror="this.parentElement.innerHTML='<div class=\'hero-floral-fallback\'></div>'">
+        </div>
+        <div class="hero-content">
+          <h1 class="hero-names" id="heroNames">
+            <span id="brideName">Riley</span> & <span id="groomName">Grey</span>
+          </h1>
+          <p class="hero-date" id="heroDate">August 16, 2024</p>
+          <p class="hero-location" id="heroLocation">Montauk, New York</p>
+        </div>
+      </section>
+
+      <!-- Navigation Section -->
+      <nav class="nav-section" id="nav">
+        <div class="nav-wrapper">
+          <div class="nav-line"></div>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#" data-target="home" class="nav-link active">Home</a></li>
+            <li><a href="#" data-target="couple" class="nav-link">The Couple</a></li>
+            <li><a href="#" data-target="schedule" class="nav-link">Schedule</a></li>
+            <li><a href="#" data-target="rsvp" class="nav-link">RSVP</a></li>
+            <li><a href="#" data-target="travel" class="nav-link">Travel</a></li>
+            <li><a href="#" data-target="location" class="nav-link">Location</a></li>
+          </ul>
+          <div class="nav-line"></div>
+        </div>
+      </nav>
+
+      <!-- Countdown Section -->
+      <section class="countdown-section" id="countdown">
+        <h2 class="countdown-title">The Big Day</h2>
+        <div class="countdown-grid" id="countdownGrid">
+          <div class="countdown-item">
+            <div class="countdown-number" id="countdownDays">000</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="countdownHours">00</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="countdownMinutes">00</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="countdownSeconds">00</div>
+            <div class="countdown-label">Seconds</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="footer-names" id="footerNames">Riley & Grey</p>
+        <p class="footer-date" id="footerDate">August 16, 2024</p>
+        <p class="footer-message">Can't wait to see you!</p>
+      </footer>
+    </div>
+
+    <!-- THE COUPLE PAGE -->
+    <div class="page" data-page="couple">
+      <nav class="nav-section">
+        <div class="nav-wrapper">
+          <div class="nav-line"></div>
+          <ul class="nav-links">
+            <li><a href="#" data-target="home" class="nav-link">Home</a></li>
+            <li><a href="#" data-target="couple" class="nav-link active">The Couple</a></li>
+            <li><a href="#" data-target="schedule" class="nav-link">Schedule</a></li>
+            <li><a href="#" data-target="rsvp" class="nav-link">RSVP</a></li>
+            <li><a href="#" data-target="travel" class="nav-link">Travel</a></li>
+            <li><a href="#" data-target="location" class="nav-link">Location</a></li>
+          </ul>
+          <div class="nav-line"></div>
+        </div>
+      </nav>
+
+      <section class="welcome-section" id="welcome">
+        <div class="welcome-container">
+          <div class="welcome-image">
+            <img src="images/couple.jpg" alt="The Couple"
+              onerror="this.parentElement.innerHTML='<div style=\'background:#e8e4dc;height:400px;display:flex;align-items:center;justify-content:center;color:#888;font-style:italic;\'>Your photo here</div>'">
+          </div>
+          <div class="welcome-content">
+            <p class="welcome-label">Welcome</p>
+            <h2 class="welcome-title" id="welcomeTitle">You won't want to miss this!</h2>
+            <p class="welcome-text" id="welcomeMessage">
+              We are so excited to celebrate our special day with you! After years of love and adventure together, we're
+              finally tying the knot and we can't imagine doing it without the people we love most.
+            </p>
+            <a href="#" data-target="schedule" class="welcome-link page-link">See the Schedule</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p class="footer-names footer-names-small" id="footerNamesCouple">Riley & Grey</p>
+      </footer>
+    </div>
+
+    <!-- SCHEDULE PAGE -->
+    <div class="page" data-page="schedule">
+      <nav class="nav-section">
+        <div class="nav-wrapper">
+          <div class="nav-line"></div>
+          <ul class="nav-links">
+            <li><a href="#" data-target="home" class="nav-link">Home</a></li>
+            <li><a href="#" data-target="couple" class="nav-link">The Couple</a></li>
+            <li><a href="#" data-target="schedule" class="nav-link active">Schedule</a></li>
+            <li><a href="#" data-target="rsvp" class="nav-link">RSVP</a></li>
+            <li><a href="#" data-target="travel" class="nav-link">Travel</a></li>
+            <li><a href="#" data-target="location" class="nav-link">Location</a></li>
+          </ul>
+          <div class="nav-line"></div>
+        </div>
+      </nav>
+
+      <section class="schedule-section" id="schedule">
+        <p class="section-subtitle">The Timeline</p>
+        <h2 class="section-title">Schedule</h2>
+        <p class="schedule-intro">
+          We can't wait to celebrate with you! Here's what we have planned for our special day.
+        </p>
+        <ul class="schedule-list" id="scheduleList">
+          <!-- Populated by JavaScript -->
+        </ul>
+      </section>
+
+      <div class="photo-banner">
+        <img src="images/banner.jpg" alt="Wedding banner"
+          onerror="this.parentElement.style.background='linear-gradient(to right, #e8b4a0, #c9a87c, #e8b4a0)';this.style.display='none'">
+      </div>
+
+      <footer class="footer">
+        <p class="footer-names footer-names-small">Riley & Grey</p>
+      </footer>
+    </div>
+
+    <!-- RSVP PAGE -->
+    <div class="page" data-page="rsvp">
+      <nav class="nav-section">
+        <div class="nav-wrapper">
+          <div class="nav-line"></div>
+          <ul class="nav-links">
+            <li><a href="#" data-target="home" class="nav-link">Home</a></li>
+            <li><a href="#" data-target="couple" class="nav-link">The Couple</a></li>
+            <li><a href="#" data-target="schedule" class="nav-link">Schedule</a></li>
+            <li><a href="#" data-target="rsvp" class="nav-link active">RSVP</a></li>
+            <li><a href="#" data-target="travel" class="nav-link">Travel</a></li>
+            <li><a href="#" data-target="location" class="nav-link">Location</a></li>
+          </ul>
+          <div class="nav-line"></div>
+        </div>
+      </nav>
+
+      <section class="rsvp-section" id="rsvp">
+        <div class="rsvp-container">
+          <p class="section-subtitle">Respond</p>
+          <h2 class="section-title">RSVP</h2>
+          <p class="rsvp-intro" id="rsvpMessage">
+            Please let us know if you'll be joining us for our celebration. We truly hope you can make it!
+          </p>
+
+          <form class="rsvp-form" id="rsvpForm">
+            <div class="form-group">
+              <label class="form-label" for="guestName">Your Name</label>
+              <input type="text" class="form-input" id="guestName" name="guestName" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="guestEmail">Email Address</label>
+              <input type="email" class="form-input" id="guestEmail" name="guestEmail" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Will You Be Attending?</label>
+              <div class="form-radio-group">
+                <label class="form-radio">
+                  <input type="radio" name="attending" value="yes" required>
+                  <span>Joyfully Accept</span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="attending" value="no">
+                  <span>Regretfully Decline</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group" id="guestCountGroup">
+              <label class="form-label" for="guestCount">Number of Guests</label>
+              <select class="form-select" id="guestCount" name="guestCount">
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="dietaryRestrictions">Dietary Restrictions</label>
+              <textarea class="form-textarea" id="dietaryRestrictions" name="dietaryRestrictions"
+                placeholder="Please let us know of any dietary restrictions or allergies..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="songRequest">Song Request</label>
+              <input type="text" class="form-input" id="songRequest" name="songRequest"
+                placeholder="What song will get you on the dance floor?">
+            </div>
+
+            <button type="submit" class="btn">Send RSVP</button>
+            <p class="rsvp-deadline">Please respond by <span id="rsvpDeadline">July 15, 2025</span></p>
+          </form>
+
+          <div class="rsvp-success" id="rsvpSuccess">
+            <h3>Thank You!</h3>
+            <p>Your RSVP has been received. We can't wait to celebrate with you!</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p class="footer-names footer-names-small">Riley & Grey</p>
+      </footer>
+    </div>
+
+    <!-- TRAVEL PAGE -->
+    <div class="page" data-page="travel">
+      <nav class="nav-section">
+        <div class="nav-wrapper">
+          <div class="nav-line"></div>
+          <ul class="nav-links">
+            <li><a href="#" data-target="home" class="nav-link">Home</a></li>
+            <li><a href="#" data-target="couple" class="nav-link">The Couple</a></li>
+            <li><a href="#" data-target="schedule" class="nav-link">Schedule</a></li>
+            <li><a href="#" data-target="rsvp" class="nav-link">RSVP</a></li>
+            <li><a href="#" data-target="travel" class="nav-link active">Travel</a></li>
+            <li><a href="#" data-target="location" class="nav-link">Location</a></li>
+          </ul>
+          <div class="nav-line"></div>
+        </div>
+      </nav>
+
+      <section class="accommodations-section" id="accommodations">
+        <p class="section-subtitle">Travel & Stay</p>
+        <h2 class="section-title">Accommodations</h2>
+        <div class="accommodations-grid" id="accommodationList">
+          <!-- Populated by JavaScript -->
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p class="footer-names footer-names-small">Riley & Grey</p>
+      </footer>
+    </div>
+
+    <!-- LOCATION PAGE -->
+    <div class="page" data-page="location">
+      <nav class="nav-section">
+        <div class="nav-wrapper">
+          <div class="nav-line"></div>
+          <ul class="nav-links">
+            <li><a href="#" data-target="home" class="nav-link">Home</a></li>
+            <li><a href="#" data-target="couple" class="nav-link">The Couple</a></li>
+            <li><a href="#" data-target="schedule" class="nav-link">Schedule</a></li>
+            <li><a href="#" data-target="rsvp" class="nav-link">RSVP</a></li>
+            <li><a href="#" data-target="travel" class="nav-link">Travel</a></li>
+            <li><a href="#" data-target="location" class="nav-link active">Location</a></li>
+          </ul>
+          <div class="nav-line"></div>
+        </div>
+      </nav>
+
+      <section class="location-section" id="location">
+        <p class="section-subtitle">The Venue</p>
+        <h2 class="section-title">Location</h2>
+        <h3 class="location-venue" id="venueName">The Grand Estate</h3>
+        <p class="location-address" id="venueAddress">789 Vineyard Lane, Napa Valley, CA 94558</p>
+
+        <div class="location-map" id="locationMap">
+          <p style="color: #888; font-style: italic;">Interactive map coming soon</p>
+        </div>
+
+        <div class="location-info">
+          <div class="location-info-item">
+            <h4>Directions</h4>
+            <p id="venueDirections">From Highway 29, take the Oakville exit and continue east for 2 miles. The venue
+              will be
+              on your left.</p>
+          </div>
+          <div class="location-info-item">
+            <h4>Parking</h4>
+            <p id="venueParking">Complimentary valet parking will be available for all guests upon arrival.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p class="footer-names footer-names-small">Riley & Grey</p>
+      </footer>
+    </div>
+
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,967 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   💒 Wedding Website - Riley & Grey "Fresh" EXACT Match
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Google Fonts - Using fonts that match the hand-drawn script style
+   ─────────────────────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@300;400;500&display=swap');
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CSS Custom Properties - Exact Riley & Grey Colors
+   ─────────────────────────────────────────────────────────────────────────── */
+:root {
+    /* Warm cream background like premium paper */
+    --color-bg: #faf7f2;
+    --color-bg-warm: #f5f0e8;
+
+    /* Text colors */
+    --color-text: #1a1a1a;
+    --color-text-light: #4a4a4a;
+    --color-text-muted: #888888;
+
+    /* Accent - dusty rose/coral */
+    --color-accent: #d4a574;
+    --color-accent-soft: #e8c9a8;
+
+    /* Lines */
+    --color-line: #1a1a1a;
+    --color-line-light: #e0dcd4;
+
+    --color-white: #ffffff;
+
+    /* Fonts */
+    --font-script: 'Great Vibes', cursive;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Raleway', 'Helvetica Neue', sans-serif;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Base Reset
+   ─────────────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-text);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Hero Section - EXACT Riley & Grey match
+   ─────────────────────────────────────────────────────────────────────────── */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 0;
+    position: relative;
+    background-color: var(--color-bg);
+}
+
+/* Floral header image - positioned at top */
+.hero-floral {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.hero-floral img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+/* Fallback gradient when no floral image */
+.hero-floral-fallback {
+    width: 100%;
+    height: 280px;
+    background: linear-gradient(180deg,
+            #f5d5c8 0%,
+            #e8c4b0 20%,
+            #f0d4c0 40%,
+            #faf7f2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-floral-fallback::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse 80px 60px at 20% 30%, rgba(232, 180, 160, 0.6), transparent),
+        radial-gradient(ellipse 60px 50px at 35% 50%, rgba(255, 200, 150, 0.5), transparent),
+        radial-gradient(ellipse 70px 55px at 50% 25%, rgba(240, 180, 140, 0.6), transparent),
+        radial-gradient(ellipse 55px 45px at 65% 45%, rgba(255, 190, 160, 0.5), transparent),
+        radial-gradient(ellipse 75px 60px at 80% 35%, rgba(232, 180, 160, 0.6), transparent);
+}
+
+.hero-content {
+    padding: 60px 20px 80px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Main names - hand-drawn script style */
+.hero-names {
+    font-family: var(--font-script);
+    font-size: clamp(52px, 12vw, 90px);
+    font-weight: 400;
+    color: var(--color-text);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.hero-date {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    margin-bottom: 10px;
+}
+
+.hero-location {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-text-light);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Navigation - Minimal & Elegant (Riley & Grey uses hamburger menu)
+   ─────────────────────────────────────────────────────────────────────────── */
+.nav-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: var(--color-bg);
+}
+
+.nav-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.nav-line {
+    height: 1px;
+    background-color: var(--color-line);
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 35px;
+    padding: 20px 0;
+    list-style: none;
+}
+
+.nav-link {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-accent);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Welcome Section - Two column layout
+   ─────────────────────────────────────────────────────────────────────────── */
+.welcome-section {
+    padding: 80px 20px 100px;
+    background-color: var(--color-bg);
+}
+
+.welcome-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.welcome-image {
+    position: relative;
+}
+
+.welcome-image img {
+    width: 100%;
+    height: auto;
+}
+
+.welcome-image-placeholder {
+    width: 100%;
+    padding-bottom: 120%;
+    background-color: var(--color-bg-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.welcome-image-placeholder::after {
+    content: 'Your photo here';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-text-muted);
+    font-size: 18px;
+}
+
+.welcome-content {
+    padding: 20px 0;
+}
+
+.welcome-label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 25px;
+}
+
+.welcome-title {
+    font-family: var(--font-script);
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.welcome-text {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 2;
+    color: var(--color-text-light);
+    margin-bottom: 35px;
+}
+
+.welcome-link {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: gap 0.3s ease;
+}
+
+.welcome-link:hover {
+    gap: 15px;
+    color: var(--color-text);
+}
+
+.welcome-link::after {
+    content: '→';
+    font-size: 14px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Countdown Section
+   ─────────────────────────────────────────────────────────────────────────── */
+.countdown-section {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: var(--color-bg-warm);
+}
+
+.countdown-title {
+    font-family: var(--font-script);
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 50px;
+}
+
+.countdown-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    text-align: center;
+}
+
+.countdown-number {
+    font-family: var(--font-serif);
+    font-size: 56px;
+    font-weight: 300;
+    color: var(--color-text);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.countdown-label {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Section Common Styles
+   ─────────────────────────────────────────────────────────────────────────── */
+.section {
+    padding: 100px 20px;
+    background-color: var(--color-bg);
+}
+
+.section-subtitle {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-family: var(--font-script);
+    font-size: clamp(42px, 6vw, 60px);
+    font-weight: 400;
+    text-align: center;
+    color: var(--color-text);
+    margin-bottom: 50px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Schedule Section
+   ─────────────────────────────────────────────────────────────────────────── */
+.schedule-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: var(--color-bg);
+}
+
+.schedule-intro {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-text-light);
+    max-width: 550px;
+    margin: 0 auto 70px;
+    line-height: 1.9;
+}
+
+.schedule-list {
+    max-width: 550px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--color-line-light);
+    text-align: left;
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.schedule-time {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    min-width: 90px;
+    padding-top: 5px;
+}
+
+.schedule-details h3 {
+    font-family: var(--font-script);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.schedule-details p {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--color-text-light);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Photo Banner
+   ─────────────────────────────────────────────────────────────────────────── */
+.photo-banner {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--color-accent-soft), var(--color-bg-warm));
+}
+
+.photo-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   RSVP Section
+   ─────────────────────────────────────────────────────────────────────────── */
+.rsvp-section {
+    padding: 100px 20px;
+    background-color: var(--color-bg);
+}
+
+.rsvp-container {
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.rsvp-intro {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-text-light);
+    margin-bottom: 50px;
+    line-height: 1.9;
+}
+
+.rsvp-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 28px;
+}
+
+.form-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    margin-bottom: 12px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 16px 18px;
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--color-text);
+    background: var(--color-white);
+    border: 1px solid var(--color-line-light);
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+.form-textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.form-radio-group {
+    display: flex;
+    gap: 35px;
+}
+
+.form-radio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.form-radio input {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--color-line-light);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-radio input:checked {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    box-shadow: inset 0 0 0 4px var(--color-white);
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 18px 50px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-white);
+    background: var(--color-text);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background: var(--color-accent);
+}
+
+.rsvp-deadline {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin-top: 30px;
+    text-align: center;
+}
+
+.rsvp-success {
+    display: none;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.rsvp-success.show {
+    display: block;
+}
+
+.rsvp-success h3 {
+    font-family: var(--font-script);
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+}
+
+.rsvp-success p {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--color-text-light);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Accommodations Section
+   ─────────────────────────────────────────────────────────────────────────── */
+.accommodations-section {
+    padding: 100px 20px;
+    background-color: var(--color-bg-warm);
+}
+
+.accommodations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accommodation-card {
+    text-align: center;
+    padding: 45px 35px;
+    background: var(--color-white);
+    border: 1px solid var(--color-line-light);
+}
+
+.accommodation-name {
+    font-family: var(--font-script);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 12px;
+}
+
+.accommodation-distance {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 25px;
+}
+
+.accommodation-details {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 2;
+    color: var(--color-text-light);
+}
+
+.accommodation-note {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid var(--color-line-light);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Location Section
+   ─────────────────────────────────────────────────────────────────────────── */
+.location-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: var(--color-bg);
+}
+
+.location-venue {
+    font-family: var(--font-script);
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 12px;
+}
+
+.location-address {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--color-text-light);
+    margin-bottom: 50px;
+}
+
+.location-map {
+    width: 100%;
+    max-width: 750px;
+    height: 350px;
+    margin: 0 auto 60px;
+    background: var(--color-line-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.location-info {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    text-align: left;
+}
+
+.location-info-item h4 {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    margin-bottom: 18px;
+}
+
+.location-info-item p {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--color-text-light);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Footer
+   ─────────────────────────────────────────────────────────────────────────── */
+.footer {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: var(--color-bg);
+    border-top: 1px solid var(--color-line-light);
+}
+
+.footer-names {
+    font-family: var(--font-script);
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 15px;
+}
+
+.footer-date {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 35px;
+}
+
+.footer-message {
+    font-family: var(--font-script);
+    font-size: 28px;
+    color: var(--color-text-light);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Animations
+   ─────────────────────────────────────────────────────────────────────────── */
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Responsive Design
+   ─────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .welcome-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .welcome-image {
+        order: -1;
+    }
+
+    .countdown-grid {
+        gap: 35px;
+    }
+
+    .countdown-number {
+        font-size: 42px;
+    }
+
+    .schedule-item {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .schedule-time {
+        min-width: auto;
+    }
+
+    .location-info {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .form-radio-group {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .hero-floral-fallback {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-names {
+        font-size: 42px;
+    }
+
+    .section-title {
+        font-size: 38px;
+    }
+
+    .nav-links {
+        gap: 8px 20px;
+    }
+
+    .nav-link {
+        font-size: 10px;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Multi-Page Navigation System
+   ─────────────────────────────────────────────────────────────────────────── */
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.page {
+    display: none;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.page.active {
+    display: block;
+    opacity: 1;
+}
+
+.page.exiting {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Smaller footer for inner pages */
+.footer-names-small {
+    font-size: 32px;
+    margin-bottom: 0;
+}
+
+/* Adjust sections for full-page feel */
+.page>section:first-of-type:not(.hero) {
+    padding-top: 60px;
+}
+
+.page>.nav-section:first-child+section {
+    padding-top: 80px;
+}
+
+/* Make inner pages have minimum height */
+.page:not([data-page="home"]) {
+    min-height: 100vh;
+    display: none;
+    flex-direction: column;
+}
+
+.page:not([data-page="home"]).active {
+    display: flex;
+}
+
+.page:not([data-page="home"])>section {
+    flex: 1;
+}
+
+/* Page links styling */
+.page-link {
+    cursor: pointer;
+}
