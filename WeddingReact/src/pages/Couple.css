@@ -1,0 +1,104 @@
+.welcome-section {
+    padding: 80px 20px 100px;
+    background-color: var(--color-bg);
+    flex: 1;
+}
+
+.welcome-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.welcome-image {
+    position: relative;
+}
+
+.welcome-image img {
+    width: 100%;
+    height: auto;
+}
+
+.welcome-image-placeholder {
+    width: 100%;
+    padding-bottom: 120%;
+    background-color: var(--color-bg-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-text-muted);
+    font-size: 18px;
+}
+
+.welcome-content {
+    padding: 20px 0;
+}
+
+.welcome-label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 25px;
+}
+
+.welcome-title {
+    font-family: var(--font-script);
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.welcome-text {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 2;
+    color: var(--color-text-light);
+    margin-bottom: 35px;
+    white-space: pre-line;
+}
+
+.welcome-link {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.welcome-link:hover {
+    gap: 15px;
+    color: var(--color-text);
+}
+
+.welcome-link span {
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .welcome-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .welcome-image {
+        order: -1;
+    }
+}

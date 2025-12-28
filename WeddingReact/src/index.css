@@ -1,0 +1,119 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   💒 Wedding Website - Global Styles (React Version)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@300;400;500&display=swap');
+
+/* CSS Custom Properties */
+:root {
+  /* Warm cream background like premium paper */
+  --color-bg: #faf7f2;
+  --color-bg-warm: #f5f0e8;
+
+  /* Text colors */
+  --color-text: #1a1a1a;
+  --color-text-light: #4a4a4a;
+  --color-text-muted: #888888;
+
+  /* Accent - dusty rose/coral */
+  --color-accent: #d4a574;
+  --color-accent-soft: #e8c9a8;
+
+  /* Lines */
+  --color-line: #1a1a1a;
+  --color-line-light: #e0dcd4;
+
+  --color-white: #ffffff;
+
+  /* Fonts */
+  --font-script: 'Great Vibes', cursive;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Raleway', 'Helvetica Neue', sans-serif;
+}
+
+/* Base Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-text);
+}
+
+/* Page transition animations */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section common styles */
+.section-subtitle {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-family: var(--font-script);
+  font-size: clamp(42px, 6vw, 60px);
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 50px;
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 38px;
+  }
+}
