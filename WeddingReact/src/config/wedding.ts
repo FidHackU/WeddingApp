@@ -8,7 +8,7 @@ export const WEDDING = {
   groom: "Darrell",
   
   // 📅 DATE & LOCATION
-  date: "August 16, 2025",
+  date: "March 01, 2026",
   dayOfWeek: "Saturday",
   venue: "The Grand Estate",
   city: "Napa Valley",

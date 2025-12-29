@@ -5,11 +5,13 @@ import { Schedule } from './pages/Schedule';
 import { RSVP } from './pages/RSVP';
 import { Travel } from './pages/Travel';
 import { Location } from './pages/Location';
+import { ScrollToTop } from './components/ScrollToTop';
 import './index.css';
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/couple" element={<Couple />} />
