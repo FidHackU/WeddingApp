@@ -2,7 +2,6 @@
     padding: 100px 20px;
     text-align: center;
     background-color: var(--color-bg);
-    flex: 1;
 }
 
 .location-venue {
@@ -18,6 +17,15 @@
     font-size: 17px;
     font-weight: 300;
     color: var(--color-text-light);
+    margin-bottom: 15px;
+}
+
+.location-description {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-text-muted);
     margin-bottom: 50px;
 }
 
@@ -68,10 +76,113 @@
     color: var(--color-text-light);
 }
 
+/* Recommendations Section */
+.recommendations-section {
+    padding: 100px 20px;
+    background-color: var(--color-bg-warm);
+    text-align: center;
+}
+
+.rec-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.rec-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 30px;
+    background: white;
+    border: 1px solid var(--color-line-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rec-tab:hover {
+    border-color: var(--color-accent);
+}
+
+.rec-tab.active {
+    background: var(--color-text);
+    border-color: var(--color-text);
+}
+
+.rec-tab.active .rec-tab-label {
+    color: white;
+}
+
+.rec-tab-emoji {
+    font-size: 24px;
+}
+
+.rec-tab-label {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-text);
+}
+
+.rec-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.rec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.rec-card {
+    background: white;
+    padding: 30px;
+    text-align: left;
+    border: 1px solid var(--color-line-light);
+    animation: fadeIn 0.3s ease;
+}
+
+.rec-type {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.rec-name {
+    font-family: var(--font-script);
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 10px;
+}
+
+.rec-description {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
 @media (max-width: 768px) {
     .location-info {
         grid-template-columns: 1fr;
         gap: 40px;
         text-align: center;
+    }
+
+    .rec-tab {
+        padding: 15px 20px;
     }
 }

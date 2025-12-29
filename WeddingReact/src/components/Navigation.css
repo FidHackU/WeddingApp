@@ -2,6 +2,7 @@
     padding: 50px 20px;
     text-align: center;
     background-color: var(--color-bg);
+    position: relative;
 }
 
 .nav-wrapper {
@@ -34,7 +35,7 @@
     color: var(--color-text);
     text-decoration: none;
     transition: color 0.3s ease;
-    padding: 5px 0;
+    padding: 8px 5px;
     position: relative;
 }
 
@@ -56,4 +57,117 @@
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 15px auto;
+    padding: 10px;
+}
+
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-text);
+    transition: all 0.3s ease;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Overlay */
+.nav-overlay {
+    display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-section {
+        padding: 30px 20px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-bg);
+        z-index: 100;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid var(--color-line-light);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid var(--color-line-light);
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 18px 20px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 50;
+    }
+
+    .nav-line:last-child {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-link {
+        font-size: 13px;
+        padding: 20px;
+        letter-spacing: 0.15em;
+    }
 }

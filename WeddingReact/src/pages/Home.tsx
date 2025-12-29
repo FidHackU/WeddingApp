@@ -74,6 +74,40 @@ export function Home() {
                 </div>
             </section>
 
+            {/* Wedding Party Section */}
+            <section className="party-section">
+                <p className="section-subtitle">Meet the</p>
+                <h2 className="section-title">Wedding Party</h2>
+
+                <div className="party-group">
+                    <h3 className="party-group-title">Bridesmaids</h3>
+                    <div className="party-grid">
+                        {WEDDING.weddingParty.bridesmaids.map((person, index) => (
+                            <div key={index} className="party-member">
+                                <div className="party-avatar">👰</div>
+                                <h4 className="party-name">{person.name}</h4>
+                                <p className="party-role">{person.role}</p>
+                                <p className="party-relation">{person.relation}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="party-group">
+                    <h3 className="party-group-title">Groomsmen</h3>
+                    <div className="party-grid">
+                        {WEDDING.weddingParty.groomsmen.map((person, index) => (
+                            <div key={index} className="party-member">
+                                <div className="party-avatar">🤵</div>
+                                <h4 className="party-name">{person.name}</h4>
+                                <p className="party-role">{person.role}</p>
+                                <p className="party-relation">{person.relation}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             <Footer />
         </div>
     );
