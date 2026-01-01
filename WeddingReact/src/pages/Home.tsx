@@ -3,6 +3,7 @@ import { WEDDING } from '../config/wedding';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import './Home.css';
+import './Schedule.css';
 
 export function Home() {
     const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -42,7 +43,7 @@ export function Home() {
                 </div>
                 <div className="hero-content">
                     <h1 className="hero-names">
-                        <span>{WEDDING.bride}</span> & <span>{WEDDING.groom}</span>
+                        <span>{WEDDING.groom}</span> & <span>{WEDDING.bride}</span>
                     </h1>
                     <p className="hero-date">{WEDDING.date}</p>
                     <p className="hero-location">{WEDDING.city}, {WEDDING.state}</p>
@@ -74,37 +75,22 @@ export function Home() {
                 </div>
             </section>
 
-            {/* Wedding Party Section */}
-            <section className="party-section">
-                <p className="section-subtitle">Meet the</p>
-                <h2 className="section-title">Wedding Party</h2>
-
-                <div className="party-group">
-                    <h3 className="party-group-title">Bridesmaids</h3>
-                    <div className="party-grid">
-                        {WEDDING.weddingParty.bridesmaids.map((person, index) => (
-                            <div key={index} className="party-member">
-                                <div className="party-avatar">👰</div>
-                                <h4 className="party-name">{person.name}</h4>
-                                <p className="party-role">{person.role}</p>
-                                <p className="party-relation">{person.relation}</p>
-                            </div>
+            {/* Schedule Section */}
+            <section className="schedule-section">
+                <p className="section-subtitle">The Timeline</p>
+                <h2 className="section-title">Schedule</h2>
+                <div className="schedule-container">
+                    <ul className="schedule-list">
+                        {WEDDING.schedule.map((item, index) => (
+                            <li key={index} className="schedule-item">
+                                <span className="schedule-time">{item.time}</span>
+                                <div className="schedule-details">
+                                    <h3>{item.event}</h3>
+                                    <p>{item.description}</p>
+                                </div>
+                            </li>
                         ))}
-                    </div>
-                </div>
-
-                <div className="party-group">
-                    <h3 className="party-group-title">Groomsmen</h3>
-                    <div className="party-grid">
-                        {WEDDING.weddingParty.groomsmen.map((person, index) => (
-                            <div key={index} className="party-member">
-                                <div className="party-avatar">🤵</div>
-                                <h4 className="party-name">{person.name}</h4>
-                                <p className="party-role">{person.role}</p>
-                                <p className="party-relation">{person.relation}</p>
-                            </div>
-                        ))}
-                    </div>
+                    </ul>
                 </div>
             </section>
 

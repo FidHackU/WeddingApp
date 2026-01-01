@@ -6,14 +6,14 @@ export const WEDDING = {
   // 👫 COUPLE DETAILS
   bride: "Maybelline",
   groom: "Darrell",
-  
+
   // 📅 DATE & LOCATION
-  date: "March 01, 2026",
-  dayOfWeek: "Sunday",
-  venue: "The Grand Estate",
-  city: "Napa Valley",
-  state: "California",
-  
+  date: "May 02, 2026",
+  dayOfWeek: "Saturday",
+  venue: "Hilton Hotel, KK",
+  city: "Kota Kinabalu",
+  state: "Sabah",
+
   // 💌 WELCOME MESSAGE & OUR STORY
   welcomeTitle: "Our Story",
   welcomeMessage: `We met during a summer internship in San Francisco back in 2019. 
@@ -21,7 +21,7 @@ What started as coffee runs and late-night coding sessions turned into something
 much more special. After years of adventures across the globe, countless 
 inside jokes, and unwavering support for each other's dreams, we're ready 
 to start our greatest adventure yet - marriage!`,
-  
+
   // 📋 SCHEDULE OF EVENTS
   schedule: [
     { time: "3:30 PM", event: "Guest Arrival", description: "Please arrive and find your seats" },
@@ -67,7 +67,7 @@ to start our greatest adventure yet - marriage!`,
       { name: "Amazon", url: "https://www.amazon.com/wedding" },
     ]
   },
-  
+
   // �🏨 ACCOMMODATIONS
   accommodations: [
     {
@@ -81,7 +81,7 @@ to start our greatest adventure yet - marriage!`,
     },
     {
       name: "Meadowbrook Hotel",
-      address: "456 Valley View Drive, Napa Valley, CA", 
+      address: "456 Valley View Drive, Napa Valley, CA",
       phone: "(707) 555-0200",
       website: "https://example.com",
       note: "Complimentary breakfast included",
@@ -90,7 +90,7 @@ to start our greatest adventure yet - marriage!`,
     },
     {
       name: "Napa Valley Lodge",
-      address: "789 Vineyard Blvd, Napa Valley, CA", 
+      address: "789 Vineyard Blvd, Napa Valley, CA",
       phone: "(707) 555-0300",
       website: "https://example.com",
       note: "Spa and pool on-site",
@@ -120,7 +120,7 @@ to start our greatest adventure yet - marriage!`,
       departureTime: "1:00 PM"
     }
   },
-  
+
   // 📍 VENUE DETAILS & LOCAL RECOMMENDATIONS
   venueDetails: {
     name: "The Grand Estate",
@@ -154,14 +154,14 @@ to start our greatest adventure yet - marriage!`,
       { name: "Yountville Art Walk", type: "Galleries", description: "Local artist galleries" },
     ]
   },
-  
+
   // 🎉 RSVP SETTINGS
   rsvp: {
     deadline: "January 15, 2026",
-    contactEmail: "maybelline.darrell.2026@email.com",
+    contactEmail: "darrell.maybelline.2026@email.com",
     message: "Please let us know if you'll be joining us for our special day!"
   },
-  
+
   // 🎨 THEME COLORS
   colors: {
     primary: "#c9a87c",
