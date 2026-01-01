@@ -56,7 +56,7 @@ export function Home() {
                 <h2 className="countdown-title">The Big Day</h2>
                 <div className="countdown-grid">
                     <div className="countdown-item">
-                        <div className="countdown-number">{String(countdown.days).padStart(3, '0')}</div>
+                        <div className="countdown-number">{String(countdown.days).padStart(2, '0')}</div>
                         <div className="countdown-label">Days</div>
                     </div>
                     <div className="countdown-item">
