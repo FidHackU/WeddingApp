@@ -54,18 +54,8 @@ to start our greatest adventure yet - marriage!`,
       description: "Help us create unforgettable memories on our honeymoon to Japan!",
       goal: 5000,
     },
-    items: [
-      { name: "KitchenAid Stand Mixer", price: 400, store: "Williams Sonoma" },
-      { name: "Le Creuset Dutch Oven", price: 350, store: "Sur La Table" },
-      { name: "Dyson Vacuum", price: 500, store: "Best Buy" },
-      { name: "Luxury Bedding Set", price: 300, store: "Pottery Barn" },
-      { name: "Wine Decanter Set", price: 150, store: "Crate & Barrel" },
-      { name: "Espresso Machine", price: 600, store: "Williams Sonoma" },
-    ],
-    externalLinks: [
-      { name: "Zola", url: "https://www.zola.com" },
-      { name: "Amazon", url: "https://www.amazon.com/wedding" },
-    ]
+    items: [],
+    externalLinks: []
   },
 
   // �🏨 ACCOMMODATIONS

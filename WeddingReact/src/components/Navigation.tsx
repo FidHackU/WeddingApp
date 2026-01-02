@@ -10,6 +10,7 @@ export function Navigation() {
         { path: '/', label: 'HOME' },
         { path: '/schedule', label: 'PARTY' },
         { path: '/registry', label: 'REGISTRY' },
+
         { path: '/travel', label: 'TRAVEL' },
         { path: '/qna', label: 'Q & A' },
         { path: '/rsvp', label: 'RSVP' },
