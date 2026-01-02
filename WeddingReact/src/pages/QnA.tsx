@@ -21,7 +21,7 @@ export function QnA() {
                     <div className="qna-item">
                         <h3 className="qna-question">When is the RSVP deadline?</h3>
                         <p className="qna-answer">
-                            Please RSVP by 27th April, so we can have an accurate headcount. :)
+                            Please RSVP by 31st January 2026, So we can have an accurate headcount. :)
                         </p>
                     </div>
 
@@ -35,7 +35,7 @@ export function QnA() {
                     <div className="qna-item">
                         <h3 className="qna-question">What should I wear?</h3>
                         <p className="qna-answer">
-                            Semi-formal. We also have a theme and would love for you to join us by wearing shades of green and red, but of course, it’s entirely your choice—wear whatever makes you feel your best!
+                            Semi-formal. We also have a theme (Old Money Rich Style) and would love for you to join us by wearing shades of olive/mint green and cream, but of course, it’s entirely your choice—wear whatever makes you feel your best!
                         </p>
                     </div>
 
