@@ -45,6 +45,13 @@ export function QnA() {
                             Yes! We would love for you to take photos and share them with us. However, do give way for our official photographer and videographer.
                         </p>
                     </div>
+
+                    <div className="qna-item">
+                        <h3 className="qna-question">Is parking available?</h3>
+                        <p className="qna-answer">
+                            Yes! For the Church, parking is available on-site. For the dinner reception at Hilton Kota Kinabalu, a flat rate of RM10.00 per entry applies for banquet guests (please validate your ticket at the reception). Valet parking is also available for RM30.00.
+                        </p>
+                    </div>
                 </div>
 
                 {/* Bottom Flourish */}
