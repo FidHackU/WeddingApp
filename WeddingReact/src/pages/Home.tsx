@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { WEDDING } from '../config/wedding';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import { PhotoGrid } from '../components/PhotoGrid';
+import { Carousel } from '../components/Carousel';
 import './Home.css';
 
 export function Home() {
@@ -46,9 +48,14 @@ export function Home() {
             {/* Navigation */}
             <Navigation />
 
-            {/* Placeholder Image */}
-            <section className="home-image-placeholder">
-                <p>Your Photo Here</p>
+            {/* Photo Section - Hybrid Layout */}
+            <section className="home-photo-section">
+                <div className="desktop-photo-grid">
+                    <PhotoGrid />
+                </div>
+                <div className="mobile-photo-carousel">
+                    <Carousel />
+                </div>
             </section>
 
             {/* Main Content - Two Column Layout */}

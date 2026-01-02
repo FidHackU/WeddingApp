@@ -1,0 +1,146 @@
+/* Apple-Style Cinematic Carousel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    /* Full width of the parent container or very wide */
+    aspect-ratio: 16 / 9;
+    /* Cinematic ratio */
+    max-height: 700px;
+    margin: 0 auto 60px;
+    overflow: hidden;
+    border-radius: 20px;
+    /* Smooth refined corners */
+    /* Subtle shadow for depth, no harsh borders */
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
+    background-color: #000;
+    /* Black background for cinematic feel */
+    cursor: default;
+    /* Default cursor to avoid distraction */
+}
+
+/* Wrapper */
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Slides */
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /* Ultra smooth cross-fade */
+    transition: opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+    overflow: hidden;
+    /* Important for the zoom effect */
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Image styling & Ken Burns Effect */
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Start slightly zoomed out */
+    transform: scale(1.05);
+    will-change: transform;
+}
+
+/* 
+ * Creating a "Breathing" / Ken Burns effect.
+ * We use a very long transition on the transform property.
+ * When active, it slowly zooms in further.
+ */
+.carousel-slide.active img {
+    transition: transform 20s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(1.15);
+    /* Slow delicate zoom */
+}
+
+/* Invisible Navigation Zones */
+.carousel-nav-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+}
+
+.nav-zone {
+    height: 100%;
+    width: 50%;
+    cursor: pointer;
+    /* Remove tap highlight on mobile */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 
+ * Indicators - Apple style: extremely subtle lines or dots 
+ */
+.carousel-indicators {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 20;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.2);
+    /* Very faint adjustment */
+    backdrop-filter: blur(20px);
+    border-radius: 100px;
+}
+
+.carousel-dot {
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.carousel-dot.active {
+    background: rgba(255, 255, 255, 0.95);
+    transform: scale(1.1);
+}
+
+/* Hide indicators completely if user stops interacting (Optional polish) */
+.carousel-container:hover .carousel-indicators {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-container {
+        border-radius: 0;
+        /* Full edge to edge on mobile looks more app-like */
+        aspect-ratio: 4/5;
+        /* Taller for mobile portraits */
+        margin-bottom: 0;
+        box-shadow: none;
+    }
+
+    .carousel-dot {
+        width: 6px;
+        height: 6px;
+    }
+}
