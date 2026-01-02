@@ -60,7 +60,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: start;
+    align-items: center;
     border-top: 1px solid var(--color-line-light);
     padding-top: 60px;
 }
