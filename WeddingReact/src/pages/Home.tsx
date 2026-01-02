@@ -3,7 +3,6 @@ import { WEDDING } from '../config/wedding';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import './Home.css';
-import './Schedule.css';
 
 export function Home() {
     const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -35,62 +34,59 @@ export function Home() {
     }, []);
 
     return (
-        <div className="page">
-            {/* Hero Section */}
-            <section className="hero">
-                <div className="hero-floral">
-                    <div className="hero-floral-fallback"></div>
-                </div>
-                <div className="hero-content">
-                    <h1 className="hero-names">
-                        <span>{WEDDING.groom}</span> & <span>{WEDDING.bride}</span>
-                    </h1>
-                    <p className="hero-date">{WEDDING.date}</p>
-                    <p className="hero-location">{WEDDING.city}, {WEDDING.state}</p>
-                </div>
-            </section>
+        <div className="page home-page">
+            {/* Header with Names and Date */}
+            <header className="home-header">
+                <h1 className="home-header-names">
+                    {WEDDING.groom} & {WEDDING.bride}
+                </h1>
+                <p className="home-header-date">{WEDDING.date}</p>
+            </header>
 
+            {/* Navigation */}
             <Navigation />
 
-            {/* Countdown Section */}
-            <section className="countdown-section">
-                <h2 className="countdown-title">The Big Day</h2>
-                <div className="countdown-grid">
-                    <div className="countdown-item">
-                        <div className="countdown-number">{String(countdown.days).padStart(2, '0')}</div>
-                        <div className="countdown-label">Days</div>
-                    </div>
-                    <div className="countdown-item">
-                        <div className="countdown-number">{String(countdown.hours).padStart(2, '0')}</div>
-                        <div className="countdown-label">Hours</div>
-                    </div>
-                    <div className="countdown-item">
-                        <div className="countdown-number">{String(countdown.minutes).padStart(2, '0')}</div>
-                        <div className="countdown-label">Minutes</div>
-                    </div>
-                    <div className="countdown-item">
-                        <div className="countdown-number">{String(countdown.seconds).padStart(2, '0')}</div>
-                        <div className="countdown-label">Seconds</div>
-                    </div>
-                </div>
+            {/* Placeholder Image */}
+            <section className="home-image-placeholder">
+                <p>Your Photo Here</p>
             </section>
 
-            {/* Schedule Section */}
-            <section className="schedule-section">
-                <p className="section-subtitle">The Timeline</p>
-                <h2 className="section-title">Schedule</h2>
-                <div className="schedule-container">
-                    <ul className="schedule-list">
-                        {WEDDING.schedule.map((item, index) => (
-                            <li key={index} className="schedule-item">
-                                <span className="schedule-time">{item.time}</span>
-                                <div className="schedule-details">
-                                    <h3>{item.event}</h3>
-                                    <p>{item.description}</p>
+            {/* Main Content - Two Column Layout */}
+            <section className="home-content">
+                <div className="home-content-grid">
+                    {/* Left Column */}
+                    <div className="home-content-left">
+                        <h2 className="home-callout-text">You won't want to miss this!</h2>
+                        <a href="/schedule" className="home-link">SCHEDULE</a>
+                    </div>
+
+                    {/* Right Column */}
+                    <div className="home-content-right">
+                        {/* Countdown */}
+                        <div className="home-countdown">
+                            <div className="home-countdown-grid">
+                                <div className="home-countdown-item">
+                                    <div className="home-countdown-number">{countdown.days}</div>
+                                    <div className="home-countdown-label">DAYS</div>
                                 </div>
-                            </li>
-                        ))}
-                    </ul>
+                                <div className="home-countdown-item">
+                                    <div className="home-countdown-number">{countdown.hours}</div>
+                                    <div className="home-countdown-label">HOURS</div>
+                                </div>
+                                <div className="home-countdown-item">
+                                    <div className="home-countdown-number">{countdown.minutes}</div>
+                                    <div className="home-countdown-label">MINUTES</div>
+                                </div>
+                            </div>
+                            <h3 className="home-countdown-title">Until the big day!</h3>
+                        </div>
+
+                        {/* RSVP Callout */}
+                        <div className="home-rsvp-callout">
+                            <h2 className="home-callout-text">Are you coming?</h2>
+                            <a href="/rsvp" className="home-link">RSVP</a>
+                        </div>
+                    </div>
                 </div>
             </section>
 

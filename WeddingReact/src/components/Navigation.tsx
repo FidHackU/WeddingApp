@@ -7,13 +7,13 @@ export function Navigation() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const navItems = [
-        { path: '/', label: 'Home' },
-        { path: '/couple', label: 'The Couple' },
-        { path: '/schedule', label: 'Schedule' },
-        { path: '/registry', label: 'Registry' },
+        { path: '/', label: 'HOME' },
+        { path: '/schedule', label: 'PARTY' },
+        { path: '/registry', label: 'REGISTRY' },
+        { path: '/location', label: 'PLACE' },
+        { path: '/travel', label: 'TRAVEL' },
+        { path: '/qna', label: 'Q & A' },
         { path: '/rsvp', label: 'RSVP' },
-        { path: '/travel', label: 'Travel' },
-        { path: '/location', label: 'Location' },
     ];
 
     const handleLinkClick = () => {
