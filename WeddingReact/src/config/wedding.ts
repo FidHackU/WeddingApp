@@ -10,7 +10,7 @@ export const WEDDING = {
   // 📅 DATE & LOCATION
   date: "May 02, 2026",
   dayOfWeek: "Saturday",
-  venue: "Hilton Hotel, KK",
+  venue: "Hilton Hotel, KK, Sabah",
   city: "Kota Kinabalu",
   state: "Sabah",
 
