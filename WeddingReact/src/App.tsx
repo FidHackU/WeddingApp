@@ -3,7 +3,7 @@ import { Home } from './pages/Home';
 import { Schedule } from './pages/Schedule';
 import { RSVP } from './pages/RSVP';
 import { Travel } from './pages/Travel';
-import { Location } from './pages/Location';
+
 import { Registry } from './pages/Registry';
 import { QnA } from './pages/QnA';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -19,7 +19,7 @@ function App() {
         <Route path="/registry" element={<Registry />} />
         <Route path="/rsvp" element={<RSVP />} />
         <Route path="/travel" element={<Travel />} />
-        <Route path="/location" element={<Location />} />
+
         <Route path="/qna" element={<QnA />} />
       </Routes>
     </BrowserRouter>
