@@ -196,7 +196,7 @@
 .travel-card-desc {
     font-family: var(--font-serif);
     font-size: 14px;
-    font-weight: 300;
+    font-weight: bold;
     color: var(--color-text-olive);
     margin-bottom: 15px;
     max-width: 200px;
@@ -206,7 +206,7 @@
 .travel-card-location {
     font-family: var(--font-serif);
     font-size: 15px;
-    font-weight: 400;
+    font-weight: bold;
     color: var(--color-text-olive);
     margin-bottom: 8px;
 }
