@@ -12,14 +12,16 @@ export function QnA() {
 
                 <h2 className="qna-title">Q & A</h2>
                 <p className="qna-subtitle">
-                    For all our friends and family who have lots of questions, please check out our Q & A first!
+                    For all our friends and family who have questions, please do check out our Q & A first!
                 </p>
 
                 <div className="qna-container">
                     <div className="qna-item">
                         <h3 className="qna-question">When is the RSVP deadline?</h3>
                         <p className="qna-answer">
-                            Please RSVP by 25th February 2026, So we can have an accurate headcount. :)
+                            Please RSVP by 25th February 2026, So we can have an accurate headcount.
+
+
                         </p>
                     </div>
 
