@@ -63,7 +63,7 @@ export function Schedule() {
                         </div>
                         <div className="schedule-detail">
                             <h4>Attire</h4>
-                            <p>Old Money Rich styles or Traditional Kadazan Costume.</p>
+                            <p>Old Money Rich styles / Traditional Kadazan Costume.</p>
                         </div>
                         <div className="schedule-detail">
                             <h4>Address</h4>
