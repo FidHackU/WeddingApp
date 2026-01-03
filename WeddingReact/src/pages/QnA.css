@@ -53,9 +53,9 @@
 
 .qna-subtitle {
     font-family: var(--font-serif);
-    font-size: 17px;
-    font-weight: 300;
-    color: var(--color-text-light);
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-text-olive);
     margin-bottom: 60px;
     max-width: 600px;
     margin-left: auto;

@@ -337,8 +337,8 @@ export function RSVP() {
                             <p className="rsvp-deadline-text">Please respond by {WEDDING.rsvp.deadline}</p>
 
                             <div className="organizer-contact">
-                                <p className="contact-heading">Questions?</p>
-                                <p>You can reach us at:</p>
+                                <p className="contact-heading">Have any questions or doubts?</p>
+                                <p>Reach out to us!</p>
 
                                 <div className="contact-person">
                                     <p className="contact-name">Darrell Yong</p>

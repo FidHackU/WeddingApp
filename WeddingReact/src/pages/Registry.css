@@ -7,13 +7,12 @@
 
 .registry-intro {
     font-family: var(--font-serif);
-    font-size: 18px;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--color-text-light);
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-text-olive);
     max-width: 600px;
     margin: 0 auto 60px;
-    line-height: 1.9;
+    line-height: 1.8;
 }
 
 /* Honeymoon Fund */

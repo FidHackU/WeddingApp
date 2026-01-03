@@ -76,7 +76,7 @@ export function Travel() {
                     <h3 className="travel-card-title travel-card-title-featured">DINNER</h3>
                     <p className="travel-card-location">Hilton Hotel KK</p>
                     <p className="travel-card-time">
-                        <span className="time-icon">🕖</span> 7:00 PM
+                        <span className="time-icon">🕖</span> 6:30 PM
                     </p>
                     <a href="https://maps.google.com/?q=Hilton+Kota+Kinabalu" target="_blank" rel="noopener noreferrer" className="travel-btn travel-btn-featured">
                         <span>DINNER RECEPTION</span>

@@ -53,9 +53,9 @@
 
 .travel-subtitle {
     font-family: var(--font-serif);
-    font-size: 17px;
-    font-weight: 300;
-    color: var(--color-text-light);
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-text-olive);
     margin-bottom: 60px;
     max-width: 480px;
     margin-left: auto;
@@ -197,7 +197,7 @@
     font-family: var(--font-serif);
     font-size: 14px;
     font-weight: 300;
-    color: var(--color-text-light);
+    color: var(--color-text-olive);
     margin-bottom: 15px;
     max-width: 200px;
     line-height: 1.5;
@@ -207,7 +207,7 @@
     font-family: var(--font-serif);
     font-size: 15px;
     font-weight: 400;
-    color: var(--color-text-light);
+    color: var(--color-text-olive);
     margin-bottom: 8px;
 }
 
