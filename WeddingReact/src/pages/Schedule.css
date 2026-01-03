@@ -77,10 +77,11 @@
 
 .schedule-description {
     font-family: var(--font-serif);
-    font-size: 15px;
-    font-weight: 300;
-    color: var(--color-text-light);
-    line-height: 1.7;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--color-text);
+    line-height: 1.8;
+    text-align: left;
     margin-bottom: 30px;
 }
 
@@ -91,7 +92,7 @@
 
 .schedule-detail h4 {
     font-family: var(--font-serif);
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600;
     font-style: italic;
     color: var(--color-text);
@@ -100,10 +101,10 @@
 
 .schedule-detail p {
     font-family: var(--font-serif);
-    font-size: 15px;
-    font-weight: 300;
-    color: var(--color-text-light);
-    line-height: 1.5;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--color-text);
+    line-height: 1.8;
 }
 
 /* Map Link */

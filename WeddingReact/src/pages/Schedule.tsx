@@ -19,7 +19,7 @@ export function Schedule() {
                             <h3 className="schedule-event">CHURCH/ HOLY MATRIMONY</h3>
                         </div>
                         <p className="schedule-description">
-                            Although the courthouse will have our signatures on the dotted line, we know it won't be real in our eyes until you help us make the commitment. After some lip-locking, a Pablo Neruda poem and the string-quartet version of 'Into the Mystic,' we think the deal will be sealed.
+                            Join us as we exchange our vows and celebrate our holy matrimony. Please arrive early, as the ceremony will begin promptly at 9:00am. Dress modestly and appropriately for the church.
                         </p>
                         <div className="schedule-detail">
                             <h4>Venue</h4>
@@ -38,14 +38,24 @@ export function Schedule() {
                         </a>
                     </div>
 
-                    {/* Dinner Reception */}
+                    {/* Evening Celebration: Light Refreshments & Dinner */}
                     <div className="schedule-card">
+                        {/* Light Refreshments */}
+                        <div className="schedule-card-header">
+                            <span className="schedule-time">6:30PM</span>
+                            <h3 className="schedule-event">LIGHT REFRESHMENTS</h3>
+                        </div>
+                        <p className="schedule-description" style={{ marginBottom: '40px' }}>
+                            Join us for light refreshments and drinks while you mingle and get ready for the evening celebration.
+                        </p>
+
+                        {/* Dinner Reception */}
                         <div className="schedule-card-header">
                             <span className="schedule-time">7:00PM</span>
                             <h3 className="schedule-event">DINNER RECEPTION</h3>
                         </div>
                         <p className="schedule-description">
-                            No need to front, this is what we all have been waiting for. Enjoy a margarita or glass of prosecco at the Electric Eel while wifey & hubby (wait, us?) snap some photos in the teepee, then gather back 'round in the garden for a lantern-lit fiesta
+                            Join us for the dinner reception at Hilton Hotel, Kota Kinabalu, centrally located and just minutes from Jesselton Jetty and shopping areas.
                         </p>
                         <div className="schedule-detail">
                             <h4>Venue</h4>
@@ -53,7 +63,7 @@ export function Schedule() {
                         </div>
                         <div className="schedule-detail">
                             <h4>Attire</h4>
-                            <p>Smart Casual(Old Money Rich Clothing)/ Kadazan Costume. Dancing shoes required.</p>
+                            <p>Old Money Rich styles or Traditional Kadazan Costume.</p>
                         </div>
                         <div className="schedule-detail">
                             <h4>Address</h4>
