@@ -8,9 +8,7 @@ export function QnA() {
             <Navigation />
 
             <section className="qna-section">
-                {/* Decorative Elements */}
-                <div className="qna-decoration qna-decoration-left">❧</div>
-                <div className="qna-decoration qna-decoration-right">❧</div>
+
 
                 <h2 className="qna-title">Q & A</h2>
                 <p className="qna-subtitle">
@@ -54,10 +52,7 @@ export function QnA() {
                     </div>
                 </div>
 
-                {/* Bottom Flourish */}
-                <div className="qna-flourish">
-                    <span>♥</span>
-                </div>
+
             </section>
 
             <Footer minimal />

@@ -24,7 +24,7 @@
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-size: 0.85rem;
-    color: var(--color-gold);
+    color: var(--color-accent);
     margin-bottom: 0.5rem;
 }
 
@@ -63,7 +63,7 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--color-gold);
+    color: var(--color-accent);
 }
 
 .form-input,
@@ -85,7 +85,7 @@
 .form-select:focus,
 .form-textarea:focus {
     outline: none;
-    border-bottom-color: var(--color-gold);
+    border-bottom-color: var(--color-accent);
 }
 
 .form-textarea {
@@ -115,7 +115,7 @@
 }
 
 .radio-option input[type="radio"] {
-    accent-color: var(--color-gold);
+    accent-color: var(--color-accent);
     width: 1.2rem;
     height: 1.2rem;
 }
@@ -158,7 +158,7 @@
 }
 
 .guest-name-input:focus {
-    border-left-color: var(--color-gold);
+    border-left-color: var(--color-accent);
 }
 
 /* Submit Button */
@@ -177,7 +177,7 @@
 }
 
 .submit-btn:hover {
-    background-color: var(--color-gold);
+    background-color: var(--color-accent);
     transform: translateY(-2px);
 }
 

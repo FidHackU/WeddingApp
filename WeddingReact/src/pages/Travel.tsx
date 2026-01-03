@@ -8,9 +8,7 @@ export function Travel() {
             <Navigation />
 
             <section className="travel-section">
-                {/* Decorative Elements */}
-                <div className="travel-decoration travel-decoration-left">❧</div>
-                <div className="travel-decoration travel-decoration-right">❧</div>
+
 
                 <h2 className="travel-title">Travel</h2>
                 <p className="travel-subtitle">Wish you could teleport to the Place? Us, too. Here are the next best options.</p>
@@ -88,10 +86,7 @@ export function Travel() {
                     </a>
                 </div>
 
-                {/* Bottom Flourish */}
-                <div className="travel-flourish">
-                    <span>♥</span>
-                </div>
+
             </section>
 
             <Footer minimal />
