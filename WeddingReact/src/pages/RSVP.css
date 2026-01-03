@@ -242,28 +242,27 @@
 }
 
 .contact-heading {
-    font-family: var(--font-script);
-    /* Uses the elegant script font */
-    font-size: 2.5rem;
-    /* Larger for impact */
-    font-weight: 400;
-    color: var(--color-text);
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-text-olive);
     margin-bottom: 0.5rem;
     text-transform: none;
-    /* flexible for script font */
     letter-spacing: normal;
 }
 
 .organizer-contact p {
     font-family: var(--font-serif);
     font-size: 20px;
+    font-weight: bold;
     color: var(--color-text-olive);
     margin: 0;
     line-height: 1.6;
 }
 
 .organizer-contact a {
-    color: var(--color-text);
+    color: var(--color-text-olive);
+    font-weight: bold;
     text-decoration: none;
     border-bottom: 1px solid var(--color-line-light);
     transition: all 0.3s ease;
@@ -281,10 +280,10 @@
 
 .contact-name {
     font-family: var(--font-serif);
-    font-size: 1.2rem;
-    color: var(--color-text);
+    font-size: 20px;
+    color: var(--color-text-olive);
     margin-bottom: 0.5rem !important;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .contact-links {
@@ -350,6 +349,7 @@
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
