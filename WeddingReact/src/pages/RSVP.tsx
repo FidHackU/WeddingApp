@@ -17,7 +17,7 @@ export function RSVP() {
     // Contact & Main Guest Info
     const [formData, setFormData] = useState({
         name: '',
-        email: '',
+
         phone: '',
         songRequest: '',
         events: [] as string[],
@@ -156,17 +156,7 @@ export function RSVP() {
                                 />
                             </div>
 
-                            <div className="form-group">
-                                <label className="form-label">Email Address</label>
-                                <input
-                                    type="email"
-                                    className="form-input"
-                                    value={formData.email}
-                                    onChange={(e) => handleInputChange('email', e.target.value)}
-                                    placeholder="Enter your email address"
-                                    required
-                                />
-                            </div>
+
 
                             <div className="form-group">
                                 <label className="form-label">Phone Number</label>
