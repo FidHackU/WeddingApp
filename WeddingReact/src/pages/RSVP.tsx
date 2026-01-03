@@ -1,53 +1,76 @@
-import { useState, type FormEvent } from 'react';
+import { useState, type FormEvent, useEffect } from 'react';
 import { WEDDING } from '../config/wedding';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import './RSVP.css';
 
-interface Guest {
-    id: string;
-    name: string;
-    status: 'attending' | 'not_attending';
-    count: number;
-}
-
 export function RSVP() {
     const [submitted, setSubmitted] = useState(false);
-    const [guests, setGuests] = useState<Guest[]>([
-        { id: '1', name: '', status: 'attending', count: 0 }
-    ]);
-    const [contactInfo, setContactInfo] = useState({
+    const [attending, setAttending] = useState<string>('');
+    const [guestCount, setGuestCount] = useState<string>('1');
+    const [isCustomGuestCount, setIsCustomGuestCount] = useState(false);
+    const [customGuestCount, setCustomGuestCount] = useState<string>('');
+    const [guestNames, setGuestNames] = useState<string[]>([]);
+
+    // Contact & Main Guest Info
+    const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
+        dietaryRestrictions: '',
         songRequest: ''
     });
 
-    const handleGuestChange = (id: string, field: keyof Guest, value: any) => {
-        setGuests(guests.map(guest =>
-            guest.id === id ? { ...guest, [field]: value } : guest
-        ));
+    // Update guest name inputs when count changes
+    useEffect(() => {
+        const count = isCustomGuestCount ? parseInt(customGuestCount) || 1 : parseInt(guestCount);
+        const extraGuestsNeeded = Math.max(0, count - 1);
+
+        setGuestNames(prev => {
+            const newNames = [...prev];
+            // Trim if too many
+            if (newNames.length > extraGuestsNeeded) {
+                return newNames.slice(0, extraGuestsNeeded);
+            }
+            // Add if too few
+            while (newNames.length < extraGuestsNeeded) {
+                newNames.push('');
+            }
+            return newNames;
+        });
+    }, [guestCount, isCustomGuestCount, customGuestCount]);
+
+    const handleInputChange = (field: string, value: string) => {
+        setFormData(prev => ({ ...prev, [field]: value }));
     };
 
-    const addGuest = () => {
-        setGuests([
-            ...guests,
-            { id: Date.now().toString(), name: '', status: 'attending', count: 0 }
-        ]);
+    const handleGuestNameChange = (index: number, value: string) => {
+        const newNames = [...guestNames];
+        newNames[index] = value;
+        setGuestNames(newNames);
     };
 
-    const removeGuest = (id: string) => {
-        if (guests.length > 1) {
-            setGuests(guests.filter(g => g.id !== id));
+    const handleGuestCountChange = (value: string) => {
+        if (value === 'other') {
+            setIsCustomGuestCount(true);
+            setGuestCount('other');
+        } else {
+            setIsCustomGuestCount(false);
+            setGuestCount(value);
+            setCustomGuestCount('');
         }
     };
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
 
+        const count = isCustomGuestCount ? parseInt(customGuestCount) || 1 : parseInt(guestCount);
+
         const rsvpData = {
-            guests,
-            contactInfo,
+            ...formData,
+            attending: attending === 'yes',
+            guestCount: count,
+            additionalGuests: guestNames,
             submittedAt: new Date().toISOString(),
         };
 
@@ -66,123 +89,172 @@ export function RSVP() {
 
             <section className="rsvp-section">
                 <div className="rsvp-container">
-                    <h1 className="rsvp-title">RSVP</h1>
-                    <p className="rsvp-deadline-text">Please RSVP by {WEDDING.rsvp.deadline}</p>
+                    <p className="section-subtitle">Respond</p>
+                    <h1 className="section-title">RSVP</h1>
+                    <p className="rsvp-intro">
+                        Please let us know if you'll be joining us for our celebration. We truly hope you can make it!
+                    </p>
 
                     {!submitted ? (
                         <form className="rsvp-form" onSubmit={handleSubmit}>
-                            <div className="guests-container">
-                                {guests.map((guest) => (
-                                    <div key={guest.id} className="guest-entry">
-                                        <div className="guest-row name-row">
-                                            <span className="guest-prefix">I,</span>
-                                            <input
-                                                type="text"
-                                                className="form-input-line"
-                                                placeholder="Name"
-                                                value={guest.name}
-                                                onChange={(e) => handleGuestChange(guest.id, 'name', e.target.value)}
-                                                required
-                                            />
-                                            <span className="guest-suffix">,</span>
-                                            {guests.length > 1 && (
-                                                <button type="button" className="remove-guest-btn" onClick={() => removeGuest(guest.id)}>&times;</button>
-                                            )}
-                                        </div>
-
-                                        <div className="attendance-select-wrapper">
-                                            <select
-                                                className="attendance-select"
-                                                value={guest.status}
-                                                onChange={(e) => handleGuestChange(guest.id, 'status', e.target.value)}
-                                            >
-                                                <option value="attending">AM ATTENDING</option>
-                                                <option value="not_attending">WILL NOT BE ATTENDING</option>
-                                            </select>
-                                        </div>
-
-                                        <div className="wedding-text">Wedding.</div>
-
-                                        <div className="guest-row count-row">
-                                            <span>I will be attending</span>
-                                            <select
-                                                className="count-select"
-                                                value={guest.count}
-                                                onChange={(e) => handleGuestChange(guest.id, 'count', parseInt(e.target.value))}
-                                                disabled={guest.status === 'not_attending'}
-                                            >
-                                                {[0, 1, 2, 3, 4, 5].map(num => (
-                                                    <option key={num} value={num}>{num}</option>
-                                                ))}
-                                            </select>
-                                            <span>.</span>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <button type="button" className="add-guest-btn" onClick={addGuest}>
-                                + Add Another Guest
-                            </button>
-
-                            <div className="song-request-section">
-                                <label>You'll find us on the dance floor when they play</label>
+                            {/* Contact Info */}
+                            <div className="form-group">
+                                <label className="form-label">Your Name</label>
                                 <input
                                     type="text"
-                                    className="form-input-line song-input"
-                                    placeholder="SONG NAME"
-                                    value={contactInfo.songRequest}
-                                    onChange={(e) => setContactInfo({ ...contactInfo, songRequest: e.target.value })}
-                                />
-                                <span>.</span>
-                            </div>
-
-                            <div className="contact-section">
-                                <div className="contact-row">
-                                    <span className="contact-label">I'm</span>
-                                    <input
-                                        type="text"
-                                        className="form-input-line"
-                                        placeholder="YOUR NAME"
-                                        value={contactInfo.name}
-                                        onChange={(e) => setContactInfo({ ...contactInfo, name: e.target.value })}
-                                        required
-                                    />
-                                    <span>.</span>
-                                </div>
-
-                                <div className="contact-sub-header">You can reach me at:</div>
-
-                                <input
-                                    type="email"
-                                    className="form-input-line full-width"
-                                    placeholder="EMAIL ADDRESS"
-                                    value={contactInfo.email}
-                                    onChange={(e) => setContactInfo({ ...contactInfo, email: e.target.value })}
+                                    className="form-input"
+                                    value={formData.name}
+                                    onChange={(e) => handleInputChange('name', e.target.value)}
                                     required
                                 />
+                            </div>
 
+                            <div className="form-group">
+                                <label className="form-label">Email Address</label>
                                 <input
-                                    type="tel"
-                                    className="form-input-line full-width"
-                                    placeholder="PHONE NUMBER"
-                                    value={contactInfo.phone}
-                                    onChange={(e) => setContactInfo({ ...contactInfo, phone: e.target.value })}
+                                    type="email"
+                                    className="form-input"
+                                    value={formData.email}
+                                    onChange={(e) => handleInputChange('email', e.target.value)}
+                                    required
                                 />
                             </div>
 
-                            <button type="submit" className="btn">Send RSVP</button>
+                            <div className="form-group">
+                                <label className="form-label">Phone Number</label>
+                                <input
+                                    type="tel"
+                                    className="form-input"
+                                    value={formData.phone}
+                                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                                    required
+                                />
+                            </div>
+
+                            {/* Attendance */}
+                            <div className="form-group">
+                                <label className="form-label">Will You Be Attending?</label>
+                                <div className="radio-group">
+                                    <label className={`radio-option ${attending === 'yes' ? 'selected' : ''}`}>
+                                        <input
+                                            type="radio"
+                                            name="attending"
+                                            value="yes"
+                                            checked={attending === 'yes'}
+                                            onChange={(e) => setAttending(e.target.value)}
+                                            required
+                                        />
+                                        <span className="radio-label">Joyfully Accept</span>
+                                    </label>
+                                    <label className={`radio-option ${attending === 'no' ? 'selected' : ''}`}>
+                                        <input
+                                            type="radio"
+                                            name="attending"
+                                            value="no"
+                                            checked={attending === 'no'}
+                                            onChange={(e) => setAttending(e.target.value)}
+                                        />
+                                        <span className="radio-label">Regretfully Decline</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            {/* Conditional Fields for Attending Guests */}
+                            {attending === 'yes' && (
+                                <div className="attending-fields">
+                                    <div className="form-group">
+                                        <label className="form-label">Number of Guests</label>
+                                        <select
+                                            className="form-select"
+                                            value={guestCount}
+                                            onChange={(e) => handleGuestCountChange(e.target.value)}
+                                        >
+                                            <option value="1">1 Guest</option>
+                                            <option value="2">2 Guests</option>
+                                            <option value="3">3 Guests</option>
+                                            <option value="4">4 Guests</option>
+                                            <option value="5">5 Guests</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    {isCustomGuestCount && (
+                                        <div className="form-group">
+                                            <label className="form-label">Enter Number of Guests</label>
+                                            <input
+                                                type="number"
+                                                min="1"
+                                                max="20"
+                                                className="form-input"
+                                                value={customGuestCount}
+                                                onChange={(e) => setCustomGuestCount(e.target.value)}
+                                                required
+                                            />
+                                        </div>
+                                    )}
+
+                                    {/* Dynamic Guest Name Inputs */}
+                                    {guestNames.length > 0 && (
+                                        <div className="guest-names-group">
+                                            <label className="form-label">Guest Names</label>
+                                            <div className="guest-names-list">
+                                                {guestNames.map((name, index) => (
+                                                    <input
+                                                        key={index}
+                                                        type="text"
+                                                        className="form-input guest-name-input"
+                                                        placeholder={`Guest ${index + 2} Name`}
+                                                        value={name}
+                                                        onChange={(e) => handleGuestNameChange(index, e.target.value)}
+                                                        required
+                                                    />
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    <div className="form-group">
+                                        <label className="form-label">Dietary Restrictions</label>
+                                        <textarea
+                                            className="form-textarea"
+                                            placeholder="Please let us know of any dietary restrictions or allergies..."
+                                            value={formData.dietaryRestrictions}
+                                            onChange={(e) => handleInputChange('dietaryRestrictions', e.target.value)}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="form-label">Song Request</label>
+                                        <input
+                                            type="text"
+                                            className="form-input"
+                                            placeholder="What song will get you on the dance floor?"
+                                            value={formData.songRequest}
+                                            onChange={(e) => handleInputChange('songRequest', e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                            )}
+
+                            <button type="submit" className="submit-btn">Send RSVP</button>
+                            <p className="rsvp-deadline-text">Please respond by {WEDDING.rsvp.deadline}</p>
+
+                            <div className="organizer-contact">
+                                <p className="contact-heading">Questions?</p>
+                                <p>You can reach me at <a href="mailto:darrellyong97@gmail.com">darrellyong97@gmail.com</a></p>
+                                <p>or <a href="tel:+6581563295">+65-81563295</a> (SG) / <a href="tel:+601131538372">+6011-31538372</a> (MY)</p>
+                            </div>
                         </form>
                     ) : (
                         <div className="rsvp-success">
                             <h3>Thank You!</h3>
-                            <p>Your RSVP has been received.</p>
+                            <p>Your RSVP has been received. We can't wait to celebrate with you!</p>
                         </div>
                     )}
                 </div>
             </section>
 
-            <Footer minimal />
+            <Footer />
         </div>
     );
 }
