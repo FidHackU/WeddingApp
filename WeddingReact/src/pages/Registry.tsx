@@ -67,7 +67,7 @@ export function Registry() {
                                 <p className="bank-label">OR TRANSFER TO:</p>
                                 <p className="bank-name">Darrell Yong</p>
                                 {activeRegion === 'MY' ? (
-                                    <p className="bank-number">7058672525 (CIMB BANK)</p>
+                                    <p className="bank-number">7058-67-2525 (CIMB BANK)</p>
                                 ) : (
                                     <p className="bank-number">271-312194-3 (DBS BANK)</p>
                                 )}
