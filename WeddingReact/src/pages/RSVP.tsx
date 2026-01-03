@@ -17,7 +17,6 @@ export function RSVP() {
         name: '',
         email: '',
         phone: '',
-        dietaryRestrictions: '',
         songRequest: ''
     });
 
@@ -213,15 +212,7 @@ export function RSVP() {
                                         </div>
                                     )}
 
-                                    <div className="form-group">
-                                        <label className="form-label">Dietary Restrictions</label>
-                                        <textarea
-                                            className="form-textarea"
-                                            placeholder="Please let us know of any dietary restrictions or allergies..."
-                                            value={formData.dietaryRestrictions}
-                                            onChange={(e) => handleInputChange('dietaryRestrictions', e.target.value)}
-                                        />
-                                    </div>
+
 
                                     <div className="form-group">
                                         <label className="form-label">Song Request</label>
@@ -241,8 +232,23 @@ export function RSVP() {
 
                             <div className="organizer-contact">
                                 <p className="contact-heading">Questions?</p>
-                                <p>You can reach me at <a href="mailto:darrellyong97@gmail.com">darrellyong97@gmail.com</a></p>
-                                <p>or <a href="tel:+6581563295">+65-81563295</a> (SG) / <a href="tel:+601131538372">+6011-31538372</a> (MY)</p>
+                                <p>You can reach us at:</p>
+
+                                <div className="contact-person">
+                                    <p className="contact-name">Darrell Yong</p>
+                                    <p className="contact-links">
+                                        <a href="https://wa.me/6581563295" target="_blank" rel="noopener noreferrer">+65-81563295 (SG)</a>
+                                        {' , '}
+                                        <a href="https://wa.me/601131538372" target="_blank" rel="noopener noreferrer">+6011-31538372 (MY)</a>
+                                    </p>
+                                </div>
+
+                                <div className="contact-person">
+                                    <p className="contact-name">Maybelline Yau</p>
+                                    <p className="contact-links">
+                                        <a href="https://wa.me/60138833144" target="_blank" rel="noopener noreferrer">+6013-8833144 (MY)</a>
+                                    </p>
+                                </div>
                             </div>
                         </form>
                     ) : (
