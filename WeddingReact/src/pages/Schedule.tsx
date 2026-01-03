@@ -27,7 +27,7 @@ export function Schedule() {
                         </div>
                         <div className="schedule-detail">
                             <h4>Attire</h4>
-                            <p>Olive Green / Cream. Dress appropriately</p>
+                            <p>Olive Green / Cream</p>
                         </div>
                         <div className="schedule-detail">
                             <h4>Address</h4>
