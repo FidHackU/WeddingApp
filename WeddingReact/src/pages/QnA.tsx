@@ -37,7 +37,7 @@ export function QnA() {
                             <br /><br />
                             <strong>Church Ceremony:</strong> Please dress modestly and appropriately. We have a theme colour and would love for you to join us. Any shades of Green and Cream are welcome.
                             <br /><br />
-                            <strong>Hotel Reception:</strong> The Theme is Old Money Rich styles or Traditional Kadazan Attire.
+                            <strong>Hotel Reception:</strong> The Theme is Old Money Rich styles or Traditional Kadazan Costume.
                             <br /><br />
                             But it’s entirely your choice! Most importantly, wear whatever makes you feel your best!
                         </p>
@@ -53,7 +53,7 @@ export function QnA() {
                     <div className="qna-item">
                         <h3 className="qna-question">Do you have hotel accommodations?</h3>
                         <p className="qna-answer">
-                            Yes! Hilton Hotel is offering special discounted rates for all our guests. If you need a room, please reach out to us directly. (Before 31st Jan 2026)
+                            Yes! Hilton Hotel is offering special discounted rates for all our guests. If you need a room, please reach out to us directly. (Before 25th Feb 2026)
                         </p>
                     </div>
 
