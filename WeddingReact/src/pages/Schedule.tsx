@@ -9,7 +9,7 @@ export function Schedule() {
 
             <section className="schedule-section">
                 <h2 className="section-title">Schedule</h2>
-                <p className="schedule-date">MAY 2</p>
+                <p className="schedule-date">2<sup>nd</sup> May 2026 (Saturday)</p>
 
                 <div className="schedule-grid">
                     {/* Church / Holy Matrimony */}

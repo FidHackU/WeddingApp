@@ -40,13 +40,20 @@
 }
 
 .home-header-date {
-    font-family: var(--font-sans);
-    font-size: 14px;
+    font-family: var(--font-script);
+    font-size: 24px;
     font-weight: 400;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     text-transform: none;
     color: var(--color-text);
     margin: 0;
+}
+
+.home-header-date sup {
+    font-size: 0.6em;
+    vertical-align: top;
+    position: relative;
+    top: -0.2em;
 }
 
 

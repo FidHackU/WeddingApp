@@ -42,7 +42,7 @@ export function Home() {
                 <h1 className="home-header-names">
                     {WEDDING.groom} & {WEDDING.bride}
                 </h1>
-                <p className="home-header-date">{WEDDING.date}</p>
+                <p className="home-header-date">2<sup>nd</sup> May 2026 (Saturday)</p>
             </header>
 
             {/* Navigation */}
