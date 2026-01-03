@@ -79,7 +79,7 @@ export function Registry() {
 
             </section>
 
-            <Footer minimal />
+            <Footer />
         </div>
     );
 }

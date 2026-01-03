@@ -1,10 +1,12 @@
 import { useState, type FormEvent, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { WEDDING } from '../config/wedding';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import './RSVP.css';
 
 export function RSVP() {
+    const navigate = useNavigate();
     const [submitted, setSubmitted] = useState(false);
     const [attending, setAttending] = useState<string>('');
     const [guestCount, setGuestCount] = useState<string>('1');
@@ -15,7 +17,7 @@ export function RSVP() {
     // Contact & Main Guest Info
     const [formData, setFormData] = useState({
         name: '',
-        email: '',
+
         phone: '',
         songRequest: '',
         events: [] as string[],
@@ -76,6 +78,17 @@ export function RSVP() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState('');
 
+    const [countdown, setCountdown] = useState(5);
+
+    useEffect(() => {
+        if (submitted && countdown > 0) {
+            const timer = setTimeout(() => setCountdown(c => c - 1), 1000);
+            return () => clearTimeout(timer);
+        } else if (submitted && countdown === 0) {
+            navigate('/registry');
+        }
+    }, [submitted, countdown, navigate]);
+
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
@@ -107,6 +120,7 @@ export function RSVP() {
             localStorage.setItem('weddingRSVPs', JSON.stringify(existingRSVPs));
 
             console.log('RSVP submitted successfully');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             setSubmitted(true);
         } catch (error) {
             console.error('Error submitting RSVP:', error);
@@ -142,17 +156,7 @@ export function RSVP() {
                                 />
                             </div>
 
-                            <div className="form-group">
-                                <label className="form-label">Email Address</label>
-                                <input
-                                    type="email"
-                                    className="form-input"
-                                    value={formData.email}
-                                    onChange={(e) => handleInputChange('email', e.target.value)}
-                                    placeholder="Enter your email address"
-                                    required
-                                />
-                            </div>
+
 
                             <div className="form-group">
                                 <label className="form-label">Phone Number</label>
@@ -286,24 +290,8 @@ export function RSVP() {
                                                     <option value="3">3 Guests</option>
                                                     <option value="4">4 Guests</option>
                                                     <option value="5">5 Guests</option>
-                                                    <option value="other">Other</option>
                                                 </select>
                                             </div>
-
-                                            {isCustomGuestCount && (
-                                                <div className="form-group">
-                                                    <label className="form-label">Enter Total Number</label>
-                                                    <input
-                                                        type="number"
-                                                        min="1"
-                                                        max="20"
-                                                        className="form-input"
-                                                        value={customGuestCount}
-                                                        onChange={(e) => setCustomGuestCount(e.target.value)}
-                                                        required
-                                                    />
-                                                </div>
-                                            )}
 
                                             {/* Extra Guest Inputs for Family */}
                                             {guestNames.length > 0 && (
@@ -373,6 +361,9 @@ export function RSVP() {
                         <div className="rsvp-success">
                             <h3>Thank You!</h3>
                             <p>Your RSVP has been received. We can't wait to celebrate with you!</p>
+                            <p className="redirect-message">
+                                Redirecting to registry in {countdown}...
+                            </p>
                         </div>
                     )}
                 </div>

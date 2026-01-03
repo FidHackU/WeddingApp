@@ -89,7 +89,7 @@ export function Travel() {
 
             </section>
 
-            <Footer minimal />
+            <Footer />
         </div>
     );
 }

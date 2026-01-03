@@ -1,19 +1,7 @@
 import { WEDDING } from '../config/wedding';
 import './Footer.css';
 
-interface FooterProps {
-    minimal?: boolean;
-}
-
-export function Footer({ minimal = false }: FooterProps) {
-    if (minimal) {
-        return (
-            <footer className="footer">
-                <p className="footer-names footer-names-small">{WEDDING.groom} & {WEDDING.bride}</p>
-            </footer>
-        );
-    }
-
+export function Footer() {
     return (
         <footer className="footer">
             <p className="footer-names">{WEDDING.groom} & {WEDDING.bride}</p>

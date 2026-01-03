@@ -76,7 +76,7 @@ export function Schedule() {
                 </div>
             </section>
 
-            <Footer minimal />
+            <Footer />
         </div>
     );
 }
