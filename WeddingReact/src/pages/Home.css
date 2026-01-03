@@ -40,9 +40,9 @@
 }
 
 .home-header-date {
-    font-family: var(--font-script);
+    font-family: var(--font-sans);
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: none;
     color: var(--color-text);
@@ -103,7 +103,7 @@
 /* Callout Text */
 .home-callout-text {
     font-family: var(--font-sans);
-    font-size: clamp(24px, 4vw, 32px);
+    font-size: clamp(20px, 3vw, 24px);
     font-weight: 500;
     color: var(--color-text);
     margin-bottom: 30px;
@@ -115,11 +115,11 @@
 /* Links */
 .home-link {
     font-family: var(--font-sans);
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--color-accent);
+    color: #556B2F;
     text-decoration: underline;
     transition: color 0.3s ease;
 }

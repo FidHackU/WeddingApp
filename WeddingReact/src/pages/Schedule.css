@@ -78,7 +78,7 @@
 .schedule-description {
     font-family: var(--font-serif);
     font-size: 20px;
-    font-weight: 400;
+    font-weight: bold;
     color: var(--color-text-olive);
     line-height: 1.8;
     text-align: left;
@@ -102,7 +102,7 @@
 .schedule-detail p {
     font-family: var(--font-serif);
     font-size: 20px;
-    font-weight: 400;
+    font-weight: bold;
     color: var(--color-text-olive);
     line-height: 1.8;
 }
@@ -110,7 +110,7 @@
 /* Map Link */
 .schedule-map-link {
     font-family: var(--font-sans);
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
