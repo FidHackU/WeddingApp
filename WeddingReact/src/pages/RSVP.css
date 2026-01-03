@@ -328,6 +328,30 @@
     background: transparent;
 }
 
+
 .fade-in {
     animation: fadeIn 0.5s ease-out;
+}
+
+/* Redirect Message */
+.redirect-message {
+    font-family: var(--font-accent);
+    font-size: 1.2rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 2rem !important;
+    animation: fadeInDown 0.5s ease-out;
+    font-weight: 600;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
