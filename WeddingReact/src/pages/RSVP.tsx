@@ -286,24 +286,8 @@ export function RSVP() {
                                                     <option value="3">3 Guests</option>
                                                     <option value="4">4 Guests</option>
                                                     <option value="5">5 Guests</option>
-                                                    <option value="other">Other</option>
                                                 </select>
                                             </div>
-
-                                            {isCustomGuestCount && (
-                                                <div className="form-group">
-                                                    <label className="form-label">Enter Total Number</label>
-                                                    <input
-                                                        type="number"
-                                                        min="1"
-                                                        max="20"
-                                                        className="form-input"
-                                                        value={customGuestCount}
-                                                        onChange={(e) => setCustomGuestCount(e.target.value)}
-                                                        required
-                                                    />
-                                                </div>
-                                            )}
 
                                             {/* Extra Guest Inputs for Family */}
                                             {guestNames.length > 0 && (
