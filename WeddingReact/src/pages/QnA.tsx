@@ -68,7 +68,7 @@ export function QnA() {
 
             </section>
 
-            <Footer minimal />
+            <Footer />
         </div>
     );
 }
