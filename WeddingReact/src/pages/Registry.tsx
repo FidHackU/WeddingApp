@@ -3,10 +3,12 @@ import { WEDDING } from '../config/wedding';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import qrCode from '../assets/qr_code.jpg';
+import paynowQr from '../assets/paynow-qr.png';
 import './Registry.css';
 
 export function Registry() {
     const [showQR, setShowQR] = useState(false);
+    const [activeRegion, setActiveRegion] = useState<'MY' | 'SG'>('MY');
 
     return (
         <div className="page">
@@ -36,8 +38,40 @@ export function Registry() {
                     <div className="qr-modal-overlay" onClick={() => setShowQR(false)}>
                         <div className="qr-modal-content" onClick={e => e.stopPropagation()}>
                             <button className="qr-close-btn" onClick={() => setShowQR(false)}>×</button>
-                            <img src={qrCode} alt="Bank QR Code" className="qr-image" />
-                            <p className="qr-instruction">Scan to transfer via DuitNow</p>
+
+                            <div className="qr-region-tabs">
+                                <button
+                                    className={`qr-tab-btn ${activeRegion === 'MY' ? 'active' : ''}`}
+                                    onClick={() => setActiveRegion('MY')}
+                                >
+                                    Malaysia (DuitNow)
+                                </button>
+                                <button
+                                    className={`qr-tab-btn ${activeRegion === 'SG' ? 'active' : ''}`}
+                                    onClick={() => setActiveRegion('SG')}
+                                >
+                                    Singapore (PayNow)
+                                </button>
+                            </div>
+
+                            <img
+                                src={activeRegion === 'MY' ? qrCode : paynowQr}
+                                alt={activeRegion === 'MY' ? "DuitNow QR" : "PayNow QR"}
+                                className="qr-image"
+                            />
+                            <p className="qr-instruction">
+                                {activeRegion === 'MY' ? "Scan to transfer via DuitNow" : "Scan to transfer via PayNow"}
+                            </p>
+
+                            <div className="bank-details">
+                                <p className="bank-label">OR TRANSFER TO:</p>
+                                <p className="bank-name">Darrell Yong</p>
+                                {activeRegion === 'MY' ? (
+                                    <p className="bank-number">7058672525 (CIMB BANK)</p>
+                                ) : (
+                                    <p className="bank-number">271-312194-3 (DBS BANK)</p>
+                                )}
+                            </div>
                         </div>
                     </div>
                 )}
