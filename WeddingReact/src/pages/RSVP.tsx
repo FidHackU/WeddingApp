@@ -361,6 +361,16 @@ export function RSVP() {
                         <div className="rsvp-success">
                             <h3>Thank You!</h3>
                             <p>Your RSVP has been received. We can't wait to celebrate with you!</p>
+
+                            <a
+                                href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(`Wedding: ${WEDDING.groom} & ${WEDDING.bride}`)}&dates=20260502T010000Z/20260502T150000Z&details=${encodeURIComponent(`For more details, visit our website! \nVenue: ${WEDDING.venue}`)}&location=${encodeURIComponent(WEDDING.venue)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="calendar-btn"
+                            >
+                                📅 Add to Google Calendar
+                            </a>
+
                             <p className="redirect-message">
                                 Redirecting to registry in {countdown}...
                             </p>
