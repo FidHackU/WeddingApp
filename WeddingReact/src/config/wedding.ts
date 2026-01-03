@@ -149,7 +149,9 @@ to start our greatest adventure yet - marriage!`,
   rsvp: {
     deadline: "February 25, 2026",
     contactEmail: "darrell.maybelline.2026@email.com",
-    message: "Please let us know if you'll be joining us for our special day!"
+    message: "Please let us know if you'll be joining us for our special day!",
+    rsvpEvents: ["Church", "Dinner Reception"],
+    googleSheetsUrl: "https://script.google.com/macros/s/AKfycbyfuLntHMfXoj-Vqfgj-W2sDmScDL70CE6vqmJbEh6TEwy2jjsR4-Fbb6Dib92gTuid/exec"
   },
 
   // 🎨 THEME COLORS
