@@ -147,7 +147,7 @@ to start our greatest adventure yet - marriage!`,
 
   // 🎉 RSVP SETTINGS
   rsvp: {
-    deadline: "January 31, 2026",
+    deadline: "February 25, 2026",
     contactEmail: "darrell.maybelline.2026@email.com",
     message: "Please let us know if you'll be joining us for our special day!"
   },

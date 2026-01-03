@@ -37,9 +37,10 @@
 }
 
 .rsvp-intro {
-    font-family: var(--font-body);
-    font-size: 1.1rem;
-    color: var(--color-text-light);
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--color-text-olive);
     margin-bottom: 3rem;
     line-height: 1.6;
 }
@@ -60,10 +61,11 @@
 
 .form-label {
     font-family: var(--font-accent);
-    font-size: 0.75rem;
+    font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--color-accent);
+    color: var(--color-text-olive);
+    font-weight: 600;
 }
 
 .form-input,
@@ -73,10 +75,10 @@
     padding: 0.8rem 0;
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--color-text);
+    border-bottom: 1px solid rgba(75, 83, 32, 0.3);
+    font-family: var(--font-serif);
+    font-size: 20px;
+    color: var(--color-text-olive);
     transition: all 0.3s ease;
     border-radius: 0;
 }
@@ -121,8 +123,9 @@
 }
 
 .radio-label {
-    font-family: var(--font-body);
-    font-size: 1rem;
+    font-family: var(--font-serif);
+    font-size: 20px;
+    color: var(--color-text-olive);
 }
 
 /* Attending Fields Animation */
@@ -182,7 +185,10 @@
 }
 
 .rsvp-deadline-text {
-    color: var(--color-text);
+    font-family: var(--font-serif);
+    font-size: 20px;
+    color: var(--color-text-olive);
+    margin-top: 1rem;
 }
 
 .rsvp-success {
@@ -199,7 +205,7 @@
 
 .rsvp-success p {
     font-family: var(--font-serif);
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 300;
     color: var(--color-text-light);
 }
@@ -250,8 +256,8 @@
 
 .organizer-contact p {
     font-family: var(--font-serif);
-    font-size: 1.1rem;
-    color: var(--color-text-light);
+    font-size: 20px;
+    color: var(--color-text-olive);
     margin: 0;
     line-height: 1.6;
 }
@@ -283,6 +289,6 @@
 
 .contact-links {
     font-family: var(--font-serif);
-    font-size: 1rem !important;
-    color: var(--color-text-light);
+    font-size: 20px !important;
+    color: var(--color-text-olive);
 }
