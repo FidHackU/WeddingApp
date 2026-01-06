@@ -85,7 +85,7 @@ export function RSVP() {
             const timer = setTimeout(() => setCountdown(c => c - 1), 1000);
             return () => clearTimeout(timer);
         } else if (submitted && countdown === 0) {
-            navigate('/registry');
+            navigate('/registry', { state: { fromRSVP: true } });
         }
     }, [submitted, countdown, navigate]);
 

@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { WEDDING } from '../config/wedding';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
@@ -7,8 +8,22 @@ import paynowQr from '../assets/paynow-qr.png';
 import './Registry.css';
 
 export function Registry() {
+    const location = useLocation();
     const [showQR, setShowQR] = useState(false);
     const [activeRegion, setActiveRegion] = useState<'MY' | 'SG'>('MY');
+
+    useEffect(() => {
+        // Check if user came from RSVP submission
+        const state = location.state as { fromRSVP?: boolean };
+        if (state?.fromRSVP) {
+            const timer = setTimeout(() => {
+                setShowQR(true);
+                // Optional: Clear state so it doesn't pop up again on refresh (if desired, though tricky with history state)
+                // history.replaceState({}, document.title); 
+            }, 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [location]);
 
     return (
         <div className="page">
