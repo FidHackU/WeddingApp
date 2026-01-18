@@ -42,7 +42,7 @@ export function Registry() {
                     <p className="fund-description">
                         Click here for your kind contribution
                     </p>
-                    <div className="fund-goal">
+                    <div className="fund-goal" style={{ display: 'none' }}>
                         <span className="fund-amount">${WEDDING.registry.honeymoonFund.goal.toLocaleString()}</span>
                         <span className="fund-label">Goal</span>
                     </div>
