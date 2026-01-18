@@ -30,10 +30,10 @@ export function Registry() {
             <Navigation />
 
             <section className="registry-section">
-                <p className="section-subtitle">Gift Registry</p>
+                <p className="section-subtitle">Wedding Gift</p>
                 <h2 className="section-title">Registry</h2>
                 <p className="registry-intro">
-                    Your presence at our wedding is the greatest gift! If you’d like to help us celebrate our honeymoon, you can use the QR code or bank details below. Thank you for your love and support!
+                    Your love and support mean the world to us—whether you’re celebrating with us in person or from afar. If you’d like to give a wedding gift, we would be truly grateful. Most of all, thank you for being part of our journey.
                 </p>
 
                 {/* Honeymoon Fund */}
