@@ -50,7 +50,7 @@ to start our greatest adventure yet - marriage!`,
   registry: {
     message: "Your presence at our wedding is the greatest gift. However, if you wish to honor us with a gift, we've registered at the following places.",
     honeymoonFund: {
-      title: "Honeymoon Fund",
+      title: "Wedding Gift",
       description: "Help us create unforgettable memories on our honeymoon to Japan!",
       goal: 5000,
     },
