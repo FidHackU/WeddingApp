@@ -53,6 +53,11 @@ to start our greatest adventure yet - marriage!`,
       title: "Wedding Gift",
       description: "Help us create unforgettable memories on our honeymoon to Japan!",
       goal: 5000,
+      // Goal Tracking Config
+      startDate: "2025-10-01", // Approximate start date
+      startAmount: 500, // Initial base amount
+      perRsvpAmount: 50, // Simulated amount per RSVP
+      maxTimeAmount: 2000, // Max amount attributed to "time" progression
     },
     items: [],
     externalLinks: []

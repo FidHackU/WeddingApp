@@ -51,18 +51,58 @@
 }
 
 .fund-goal {
+    margin-bottom: 0px;
+}
+
+.goal-progress-container {
+    width: 100%;
     margin-bottom: 25px;
 }
 
-.fund-amount {
+.goal-text {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.raised-text {
     font-family: var(--font-serif);
-    font-size: 42px;
-    font-weight: 300;
+    font-size: 24px;
     color: var(--color-accent);
-    display: block;
+}
+
+.goal-subtext {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 12px;
+    background: rgba(216, 191, 169, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #D8BFA9 0%, #E8D0C5 100%);
+    border-radius: 6px;
+    transition: width 1.5s ease-out;
+}
+
+/* Remove old fund-amount styles if no longer needed or adjust them */
+.fund-amount {
+    /* Keeping this for now if we want to show the goal prominent elsewhere or just hide it */
+    display: none;
 }
 
 .fund-label {
+    /* Keeping this for now if we want to show the goal prominent elsewhere or just hide it */
+    display: none;
     font-family: var(--font-sans);
     font-size: 10px;
     font-weight: 500;
@@ -198,142 +238,265 @@
 
 @media (max-width: 600px) {
     .registry-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-/* QR Code Modal */
-.qr-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    backdrop-filter: blur(5px);
-}
-
-.qr-modal-content {
-    background: white;
-    padding: 30px;
-    border-radius: 16px;
-    position: relative;
-    max-width: 90%;
-    width: 350px;
-    text-align: center;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    animation: modalPop 0.3s ease-out;
-}
-
-@keyframes modalPop {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
+        gap: 30px;
+        max-width: 900px;
+        margin: 0 auto 60px;
     }
 
-    to {
-        opacity: 1;
-        transform: scale(1);
+    .registry-item {
+        background: rgba(255, 255, 255, 0.5);
+        padding: 30px 20px;
+        border: 1px solid rgba(216, 191, 169, 0.3);
+        border-radius: 16px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        backdrop-filter: blur(5px);
     }
-}
 
-.qr-close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--color-text-light);
-    transition: color 0.2s;
-}
 
-.qr-close-btn:hover {
-    color: var(--color-text);
-}
 
-.qr-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
+    .registry-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    }
 
-.qr-instruction {
-    font-family: var(--font-sans);
-    font-size: 14px;
-    color: var(--color-text);
-    margin: 0;
-}
+    .registry-item-icon {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
 
-/* QR Tabs */
-.qr-region-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid var(--color-line-light);
-    padding-bottom: 15px;
-}
+    .registry-item-name {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--color-text);
+        margin-bottom: 8px;
+    }
 
-.qr-tab-btn {
-    background: none;
-    border: none;
-    padding: 8px 16px;
-    font-family: var(--font-sans);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-    cursor: pointer;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
+    .registry-item-store {
+        font-family: var(--font-sans);
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        margin-bottom: 10px;
+    }
 
-.qr-tab-btn.active {
-    background-color: var(--color-accent);
-    color: white;
-    box-shadow: 0 4px 10px rgba(181, 156, 134, 0.4);
-}
+    .registry-item-price {
+        font-family: var(--font-serif);
+        font-size: 20px;
+        font-weight: 300;
+        color: var(--color-text-light);
+    }
 
-.qr-tab-btn:hover:not(.active) {
-    color: var(--color-text);
-    background-color: rgba(0, 0, 0, 0.03);
-}
+    /* Registry Links */
+    .registry-links {
+        max-width: 600px;
+        margin: 0 auto;
+        padding-top: 40px;
+        border-top: 1px solid var(--color-line-light);
+    }
 
-/* Bank Details */
-.bank-details {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px dashed var(--color-line-light);
-}
+    .registry-links-title {
+        font-family: var(--font-sans);
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+        margin-bottom: 25px;
+    }
 
-.bank-label {
-    font-family: var(--font-sans);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--color-text-muted);
-    margin-bottom: 8px;
-}
+    .registry-links-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
-.bank-name {
-    font-family: var(--font-serif);
-    font-size: 16px;
-    color: var(--color-text);
-    margin-bottom: 4px;
-}
+    /* Button Styles */
+    .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 32px;
+        background: linear-gradient(135deg, #E8D0C5 0%, #D8BFA9 100%);
+        color: var(--color-text);
+        font-family: var(--font-sans);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: none;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(216, 191, 169, 0.3);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
 
-.bank-number {
-    font-family: var(--font-sans);
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-accent);
-    letter-spacing: 0.05em;
-}
+    .btn-outline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .btn-outline:hover::before {
+        left: 100%;
+    }
+
+    .btn-outline:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(216, 191, 169, 0.4);
+        color: var(--color-text);
+        background: linear-gradient(135deg, #D8BFA9 0%, #E8D0C5 100%);
+    }
+
+    @media (max-width: 600px) {
+        .registry-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    /* QR Code Modal */
+    .qr-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+    }
+
+    .qr-modal-content {
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        position: relative;
+        max-width: 90%;
+        width: 350px;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        animation: modalPop 0.3s ease-out;
+    }
+
+    @keyframes modalPop {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .qr-close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--color-text-light);
+        transition: color 0.2s;
+    }
+
+    .qr-close-btn:hover {
+        color: var(--color-text);
+    }
+
+    .qr-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    .qr-instruction {
+        font-family: var(--font-sans);
+        font-size: 14px;
+        color: var(--color-text);
+        margin: 0;
+    }
+
+    /* QR Tabs */
+    .qr-region-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--color-line-light);
+        padding-bottom: 15px;
+    }
+
+    .qr-tab-btn {
+        background: none;
+        border: none;
+        padding: 8px 16px;
+        font-family: var(--font-sans);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+        cursor: pointer;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .qr-tab-btn.active {
+        background-color: var(--color-accent);
+        color: white;
+        box-shadow: 0 4px 10px rgba(181, 156, 134, 0.4);
+    }
+
+    .qr-tab-btn:hover:not(.active) {
+        color: var(--color-text);
+        background-color: rgba(0, 0, 0, 0.03);
+    }
+
+    /* Bank Details */
+    .bank-details {
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px dashed var(--color-line-light);
+    }
+
+    .bank-label {
+        font-family: var(--font-sans);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--color-text-muted);
+        margin-bottom: 8px;
+    }
+
+    .bank-name {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        color: var(--color-text);
+        margin-bottom: 4px;
+    }
+
+    .bank-number {
+        font-family: var(--font-sans);
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--color-accent);
+        letter-spacing: 0.05em;
+    }
