@@ -19,7 +19,7 @@ export function QnA() {
                     <div className="qna-item">
                         <h3 className="qna-question">When is the RSVP deadline?</h3>
                         <p className="qna-answer">
-                            Please RSVP by 25th February 2026, So we can have an accurate headcount.
+                            Please RSVP by 8th March 2026, So we can have an accurate headcount.
 
 
                         </p>
@@ -55,7 +55,7 @@ export function QnA() {
                     <div className="qna-item">
                         <h3 className="qna-question">Do you have hotel accommodations?</h3>
                         <p className="qna-answer">
-                            Yes! Hilton Hotel is offering special discounted rates for all our guests. If you need a room, please reach out to us directly. (Before 25th Feb 2026)
+                            Yes! Hilton Hotel is offering special discounted rates for all our guests. If you need a room, please reach out to us directly. (By March 2026 subject to availability)
                         </p>
                     </div>
 
