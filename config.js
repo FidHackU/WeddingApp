@@ -8,7 +8,7 @@ const WEDDING = {
   // ─────────────────────────────────────────────────────────────────────────
   bride: "Sarah",
   groom: "Michael",
-  
+
   // ─────────────────────────────────────────────────────────────────────────
   // 📅 DATE & LOCATION
   // ─────────────────────────────────────────────────────────────────────────
@@ -17,7 +17,7 @@ const WEDDING = {
   venue: "The Grand Estate",
   city: "Napa Valley",
   state: "California",
-  
+
   // ─────────────────────────────────────────────────────────────────────────
   // 💌 WELCOME MESSAGE
   // ─────────────────────────────────────────────────────────────────────────
@@ -25,7 +25,7 @@ const WEDDING = {
   welcomeMessage: `We are so excited to celebrate our special day with you! 
 After years of love and adventure together, we're finally tying the knot 
 and we can't imagine doing it without the people we love most.`,
-  
+
   // ─────────────────────────────────────────────────────────────────────────
   // 📋 SCHEDULE OF EVENTS
   // ─────────────────────────────────────────────────────────────────────────
@@ -37,7 +37,7 @@ and we can't imagine doing it without the people we love most.`,
     { time: "7:30 PM", event: "Dinner", description: "Followed by toasts" },
     { time: "9:00 PM", event: "Dancing", description: "Let's celebrate!" },
   ],
-  
+
   // ─────────────────────────────────────────────────────────────────────────
   // 🏨 ACCOMMODATIONS
   // ─────────────────────────────────────────────────────────────────────────
@@ -52,14 +52,14 @@ and we can't imagine doing it without the people we love most.`,
     },
     {
       name: "Meadowbrook Hotel",
-      address: "456 Valley View Drive, Napa Valley, CA", 
+      address: "456 Valley View Drive, Napa Valley, CA",
       phone: "(707) 555-0200",
       website: "https://example.com",
       note: "Complimentary breakfast included",
       distance: "10 minutes from venue"
     }
   ],
-  
+
   // ─────────────────────────────────────────────────────────────────────────
   // 📍 VENUE DETAILS
   // ─────────────────────────────────────────────────────────────────────────
@@ -70,16 +70,16 @@ and we can't imagine doing it without the people we love most.`,
     directions: "From Highway 29, take the Oakville exit and continue east for 2 miles.",
     parking: "Complimentary valet parking will be available for all guests."
   },
-  
+
   // ─────────────────────────────────────────────────────────────────────────
   // 🎉 RSVP SETTINGS
   // ─────────────────────────────────────────────────────────────────────────
   rsvp: {
-    deadline: "July 15, 2025",
-    contactEmail: "sarah.michael.2025@email.com",
-    message: "Please let us know if you'll be joining us!"
+    deadline: "March 28, 2026",
+    contactEmail: "hello@maybellineanddarrell.com",
+    message: "We can't wait to celebrate with you!"
   },
-  
+
   // ─────────────────────────────────────────────────────────────────────────
   // 🎨 THEME COLORS (Optional - modify to match your style)
   // ─────────────────────────────────────────────────────────────────────────
