@@ -75,7 +75,7 @@ and we can't imagine doing it without the people we love most.`,
   // 🎉 RSVP SETTINGS
   // ─────────────────────────────────────────────────────────────────────────
   rsvp: {
-    deadline: "March 28, 2026",
+    deadline: "April 3, 2026",
     contactEmail: "hello@maybellineanddarrell.com",
     message: "We can't wait to celebrate with you!"
   },
